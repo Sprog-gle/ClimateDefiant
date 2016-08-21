@@ -24,7 +24,7 @@ alert(searchQuery.value);
         .done(function(data) {
             alert("success");
         })
-        .fail(function() {
+        .fail(function(error) {
             alert("error");
             console.log(error.getAllResponseHeaders());
         });
