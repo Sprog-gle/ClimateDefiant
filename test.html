@@ -7,28 +7,17 @@
 <body>
 
 <script type="text/javascript">
-    $(function() {
-        var params = {
-            // Request parameters
-        };
-      
-        $.ajax({
-            url: "https://api.cognitive.microsoft.com/bing/v5.0/news/trendingtopics?" + $.param(params),
-            beforeSend: function(xhrObj){
-                // Request headers
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","{subscription key}");
-            },
-            type: "GET",
-            // Request body
-            data: "{body}",
-        })
-        .done(function(data) {
-            alert("success");
-        })
-        .fail(function() {
-            alert("error");
-        });
-    });
+
+
+var request = require('request');
+
+//Lets try to make a HTTP GET request to modulus.io's website.
+request('http://www.modulus.io', function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+        console.log(body); // Show the HTML for the Modulus homepage.
+    }
+});
+
 </script>
 </body>
 </html>
