@@ -24,6 +24,8 @@
                 xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","{subscription key}");
             },
             type: "GET",
+            datatype: 'application/json',
+            crossDomain: true,
             // Request body
             data: "{body}",
         })

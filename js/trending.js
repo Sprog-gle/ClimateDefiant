@@ -6,7 +6,7 @@
         $.ajax({
             url: "https://api.cognitive.microsoft.com/bing/v5.0/news/trendingtopics",
             type: "GET",
-            dataType: "json",
+            datatype: 'application/json',
             data: "{body}",
              headers: {
                 "Ocp-Apim-Subscription-Key" : "5e0807dc266b4f90ba19bc22898e541a",
