@@ -5,11 +5,10 @@
       
         $.ajax({
             url: "https://api.cognitive.microsoft.com/bing/v5.0/news/trendingtopics?" + $.param(params),
-            beforeSend: function(xhrObj){
-                // Request headers
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","{5e0807dc266b4f90ba19bc22898e541a}");
-                xhrObj.setRequestHeader("count", "5" );
-                xhrObj.setRequestHeader("headlineCount", "4");
+            headers: {
+                "Ocp-Apim-Subscription-Key":"{5e0807dc266b4f90ba19bc22898e541a}",
+                "count" : "5",
+                "headlineCount" : "4"
             },
             type: "GET",
             // Request body
