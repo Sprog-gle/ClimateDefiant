@@ -4,26 +4,20 @@
         };
       
         $.ajax({
-            url: "https://api.cognitive.microsoft.com/bing/v5.0/news/trendingtopics",
-            type: "GET",
-            datatype: 'application/json',
-            data: "{body}",
-             headers: {
-                "Ocp-Apim-Subscription-Key" : "5e0807dc266b4f90ba19bc22898e541a",
-              //  "count" : "5",
-              //  "headlineCount" : "4"
+            url: "https://api.cognitive.microsoft.com/bing/v5.0/news/trendingtopics?" + $.param(params),
+            beforeSend: function(xhrObj){
+                // Request headers
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","{subscription key}");
+                xhrObj.setRequestHeader("count", "5" );
+                xhrObj.setRequestHeader("headlineCount", "4");
             },
-
-
-            
+            type: "GET",
+            // Request body
+            data: "{body}",
         })
-        
         .done(function(data) {
             alert("success");
-          //  $('#trending').append;
-           // $("#trending").html(data)
-           // $("#testing").append("Testing...");
-            console.log(data);
+            $('#trending').append('<li>'+data.name+'</li>');
         })
         .fail(function() {
             alert("error");
