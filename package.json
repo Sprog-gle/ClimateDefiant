@@ -1,4 +1,5 @@
 {
+  
   "name": "omnisearch",
   "version": "1.0.0",
   "description": "",
@@ -11,6 +12,10 @@
     "require": "^2.4.20",
     "node-bing-api": "^2.4.1"
 
+  },
+   "scripts": {
+    "test": "vows --spec --isolate",
+    "start": "node index.js",
   },
   "devDependencies": {},
   "scripts": {
