@@ -7,7 +7,10 @@
     "bootstrap": "^3.3.7",
     "express": "^4.14.0",
     "jquery": "^3.1.0",
-    "request": "^2.74.0"
+    "request": "^2.74.0",
+    "require": "^2.4.20",
+    "node-bing-api": "^2.4.1"
+
   },
   "devDependencies": {},
   "scripts": {
