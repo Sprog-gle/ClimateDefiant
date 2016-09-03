@@ -10,7 +10,7 @@ if (navigator.geolocation) {
         long = position.coords.longitude;
         lat = position.coords.latitude;
         $("#data").html("Latitude: " + lat + "<br>Longitude: " + long);
-        var api = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + long + '&appid=071f8cf08a2358a2ab1d5378044cfda9';
+        var api = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + long + '&appid=071f8cf08a2358a2ab1d5378044cfda9';
         $.getJSON(api, function (data) {
             //var weatherType = data.weather[0].description;
             kTemp = data.main.temp;
@@ -22,6 +22,7 @@ if (navigator.geolocation) {
             cTemp = kTemp - 273;
             console.log(city);
             console.log(api);
+            $("#location").html("Your current location is:" + city + ".");
         });
     }); // add a select location box if user doesn't have location services on
 }
