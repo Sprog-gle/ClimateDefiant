@@ -14,21 +14,22 @@ $.ajax({
         iplocation = data.city;
         console.log(ipaddr);
         console.log("Obtained IP/Location");
-       // useIPLocation();
+        useIPLocation();
     }  
     
 })
 }
 
-// function useIPLocation(){
+ function useIPLocation(){
 if (ipaddr !== undefined){
     // take ip and put it into the api call for weather data
-    $("#ipaddress").html("Your current IP address is:" + ipaddr + ".");
-    $("#location").html("Your current location is:" + iplocation + ".");
+    $("#ipaddress").html("Your current IP address is: " + ipaddr + ".");
+    $("#location").html("Your current location is: " + iplocation + ".");
     console.log("here is the variable output");
     console.log(ipaddr);
+    
 } 
-//}
+}
 
 
 // 
