@@ -33,7 +33,7 @@ $.getJSON(api, function(data){
 
 console.log(city);
 console.log(api);
- $("#location").html("Your current location is:" +city);
+ $("#location").html("Your current location is:" + city + ".");
 
 })
 
