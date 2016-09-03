@@ -2,7 +2,7 @@
 var ipaddr;
 
 $.ajax({
-    'url' : 'freegeoip.net/json/?callback=?',
+    'url' : '//freegeoip.net/json/?callback=?',
     'async': false,
     'dataType': "json",
     'success': function(data){
@@ -14,12 +14,12 @@ $.ajax({
 
 
 
-if (ipaddr !== null(function(){
+if (ipaddr !== null){
     // take ip and put it into the api call for weather data
 
 
-}) 
-)  
+} 
+
 
 
 // 
