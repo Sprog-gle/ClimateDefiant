@@ -10,20 +10,19 @@ var iplocation;
             iplocation = data.city;
             console.log(ipaddr);
             console.log("Obtained IP/Location");
-            useIPLocation();
-            // return ipaddr;
+            // useIPLocation();
         }
     });
 }
-function useIPLocation() {
-    if (ipaddr !== undefined) {
-        // take ip and put it into the api call for weather data
-        $("#ipaddress").html("Your current IP address is:" + ipaddr + ".");
-        $("#location").html("Your current location is:" + iplocation + ".");
-        console.log("here is the variable output");
-        console.log(ipaddr);
-    }
+// function useIPLocation(){
+if (ipaddr !== undefined) {
+    // take ip and put it into the api call for weather data
+    $("#ipaddress").html("Your current IP address is:" + ipaddr + ".");
+    $("#location").html("Your current location is:" + iplocation + ".");
+    console.log("here is the variable output");
+    console.log(ipaddr);
 }
+//}
 // 
 // $(function() {
 //    $.ajax({
