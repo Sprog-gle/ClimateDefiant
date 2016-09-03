@@ -1,17 +1,19 @@
 var ipaddr;
 var iplocation;
-$.ajax({
-    'url': '//freegeoip.net/json/?callback=?',
-    'async': false,
-    'dataType': "json",
-    'success': function (data) {
-        ipaddr = data.ip;
-        iplocation = data.city;
-        console.log(ipaddr);
-        console.log("Obtained IP/Location");
-        return ipaddr;
-    }
-});
+function getIPlocation() {
+    $.ajax({
+        'url': '//freegeoip.net/json/?callback=?',
+        // 'async': false,
+        'dataType': "json",
+        'success': function (data) {
+            ipaddr = data.ip;
+            iplocation = data.city;
+            console.log(ipaddr);
+            console.log("Obtained IP/Location");
+            return ipaddr;
+        }
+    });
+}
 if (ipaddr !== undefined) {
     // take ip and put it into the api call for weather data
     $("#ipaddress").html("Your current IP address is:" + ipaddr + ".");

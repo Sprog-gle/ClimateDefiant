@@ -2,9 +2,12 @@
 var ipaddr;
 var iplocation;
 
+
+
+function getIPlocation(){
 $.ajax({
     'url' : '//freegeoip.net/json/?callback=?',
-    'async': false,
+   // 'async': false,
     'dataType': "json",
     'success': function(data){
         ipaddr = data.ip;
@@ -15,6 +18,7 @@ $.ajax({
 
     }  
 })
+}
 
 
 if (ipaddr !== undefined){
