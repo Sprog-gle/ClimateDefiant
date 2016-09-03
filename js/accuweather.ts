@@ -13,10 +13,8 @@ $.ajax({
         console.log("Obtained IP/Location");
         return ipaddr;
 
-    }
-    
-});
-
+    }  
+})
 
 
 if (ipaddr !== undefined){
@@ -26,7 +24,6 @@ if (ipaddr !== undefined){
     console.log("here is the variable output");
     console.log(ipaddr);
 } 
-
 
 
 // 
