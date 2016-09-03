@@ -8,7 +8,7 @@ $.ajax({
         ipaddr = data.ip;
         iplocation = data.city;
         console.log(ipaddr);
-        return ipaddr, iplocation;
+        return ipaddr;
     }
 });
 if (ipaddr !== null) {
