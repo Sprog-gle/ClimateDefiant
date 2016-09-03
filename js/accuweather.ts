@@ -4,7 +4,7 @@ var iplocation;
 
 
 
-function getIPlocation(){
+{
 $.ajax({
     'url' : '//freegeoip.net/json/?callback=?',
    // 'async': false,
@@ -14,13 +14,15 @@ $.ajax({
         iplocation = data.city;
         console.log(ipaddr);
         console.log("Obtained IP/Location");
-        return ipaddr;
-
+        useIPLocation();
+        // return ipaddr;
+    
     }  
+    
 })
 }
 
-
+function useIPLocation(){
 if (ipaddr !== undefined){
     // take ip and put it into the api call for weather data
     $("#ipaddress").html("Your current IP address is:" + ipaddr + ".");
@@ -28,6 +30,7 @@ if (ipaddr !== undefined){
     console.log("here is the variable output");
     console.log(ipaddr);
 } 
+}
 
 
 // 
