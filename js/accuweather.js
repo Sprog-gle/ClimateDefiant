@@ -109,6 +109,7 @@ function getWeather() {
     console.log("get weather run");
     $.ajax({
         'url': 'https://apidev.accuweather.com/locations/v1/cities/geoposition/search?q=' + lat + long + '&apikey=RK5LNtVj4ohC0rWnXWszuPMTMalyMMOC',
+        crossDomain: true,
         // 'async': false,
         'dataType': "json",
         'success': function (data) {
