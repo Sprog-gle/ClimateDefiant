@@ -44,6 +44,7 @@ getLocation();
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
+        console.log("getLocation run");
     }
     else {
         x.innerHTML = "Geolocation is not supported by this browser.";
@@ -54,6 +55,7 @@ function showPosition(position) {
         "<br>Longitude: " + position.coords.longitude;
     lat = position.coords.latitude;
     long = position.coords.longitude;
+    console.log("showPos run");
     getWeather();
 }
 function showError(error) {
@@ -104,6 +106,7 @@ function getIPLocation() {
 }
 // using the geolocation information with accuweather
 function getWeather() {
+    console.log("get weather run");
     $.ajax({
         'url': 'http://api.accuweather.com/locations/v1/cities/geoposition/search.json?q=' + lat + long + '&apikey=RK5LNtVj4ohC0rWnXWszuPMTMalyMMOC',
         // 'async': false,
