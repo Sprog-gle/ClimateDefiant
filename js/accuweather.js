@@ -108,7 +108,7 @@ function getIPLocation() {
 function getWeather() {
     console.log("get weather run");
     $.ajax({
-        'url': 'https://api.accuweather.com/locations/v1/cities/geoposition/search.json?q=' + lat + long + '&apikey=RK5LNtVj4ohC0rWnXWszuPMTMalyMMOC',
+        'url': 'https://api.accuweather.com/locations/v1/cities/geoposition/search.jsonp?q=' + lat + long + '&apikey=RK5LNtVj4ohC0rWnXWszuPMTMalyMMOC',
         // 'async': false,
         'dataType': "jsonp",
         'success': function (data) {
