@@ -167,7 +167,7 @@ function getWeather() {
             'dataType': "jsonp",
             'success': function (data) {
                 acculocation = data.LocalizedName;
-                var IDcode;
+                var IDcode = data.AdministrativeArea.ID;
                  $("#citylocation").html("Your current location is: " + acculocation + ", according to AccuWeather. ID: " + IDcode);
                console.log("Got Weather Data");
                console.log(data);
