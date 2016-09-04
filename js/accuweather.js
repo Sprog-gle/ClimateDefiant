@@ -2,6 +2,7 @@ var ipaddr;
 var iplocation;
 var lat;
 var long;
+var acculocation;
 var x = document.getElementById("location");
 // calls the get location function
 getLocation();
@@ -113,6 +114,9 @@ function getWeather() {
         // 'async': false,
         'dataType': "jsonp",
         'success': function (data) {
+            acculocation = data.LocalizedName;
+            var IDcode;
+            $("#citylocation").html("Your current location is: " + acculocation + ", according to AccuWeather. ID: " + IDcode);
             console.log("Got Weather Data");
             console.log(data);
         }
