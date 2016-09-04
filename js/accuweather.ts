@@ -1,6 +1,8 @@
 
 var ipaddr;
 var iplocation;
+var lat;
+var long;
 
 
 var x = document.getElementById("location");
@@ -79,18 +81,21 @@ getLocation();
 
 
 
-
 // get location functions and error handling
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
     } else {
         x.innerHTML = "Geolocation is not supported by this browser.";
+        
     }
 }
 function showPosition(position) {
     x.innerHTML = "Latitude: " + position.coords.latitude +
         "<br>Longitude: " + position.coords.longitude;
+        lat = position.coords.latitude;
+        long = position.coords.longitude;
+        
 }
 
 
@@ -116,6 +121,7 @@ function showError(error) {
 
 
 // if the html5 location services do not work
+// haven't added it to do anything else after this yet'
 function getIPLocation() {
     {
         $.ajax({
@@ -143,4 +149,22 @@ function getIPLocation() {
 
         }
     }
+}
+
+
+// using the geolocation information with accuweather
+function getWeather() {
+
+  $.ajax({
+            'url': 'http://api.accuweather.com/locations/v1/cities/geoposition/search.json?q=' + lat + long + '&apikey={your key}',
+            // 'async': false,
+            'dataType': "json",
+            'success': function (data) {
+               console.log("Got Weather Data");
+               console.log(data);
+               
+            }
+
+        })
+
 }
