@@ -156,7 +156,7 @@ function getIPLocation() {
 function getWeather() {
 
   $.ajax({
-            'url': 'http://api.accuweather.com/locations/v1/cities/geoposition/search.json?q=' + lat + long + '&apikey={your key}',
+            'url': 'http://api.accuweather.com/locations/v1/cities/geoposition/search.json?q=' + lat + long + '&apikey=RK5LNtVj4ohC0rWnXWszuPMTMalyMMOC',
             // 'async': false,
             'dataType': "json",
             'success': function (data) {
