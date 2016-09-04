@@ -21,10 +21,24 @@ function useIPLocation() {
         $("#location").html("Your current location is: " + iplocation + ".");
         console.log("here is the variable output");
         console.log(ipaddr);
+        $.ajax({
+            url: 'http://apidev.accuweather.com/locations/v1/search?q=' + iplocation + "&apikey=RK5LNtVj4ohC0rWnXWszuPMTMalyMMOC",
+            type: "GET",
+            dataType: 'json',
+            contentType: "application/json",
+        })
+            .done(function (weatherData) {
+            console.log("it worked!");
+            $('#weather').html(weatherData.WeatherIcon + weatherData.WeatherText);
+        })
+            .fail(function (error) {
+            alert("Oops! Something went wrong.");
+            console.log(error.getAllResponseHeaders());
+            $('#trending').append('<li>' + error.title + '</li>');
+        });
     }
 }
 // 
-// $(function() {
 //    $.ajax({
 // url: "http://dataservice.accuweather.com/locations/v1/cities/ipaddress",
 //             type: "GET",
