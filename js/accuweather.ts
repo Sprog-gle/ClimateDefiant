@@ -8,61 +8,37 @@ var x = document.getElementById("location");
 
 
 
+// calls the get location function
+getLocation();
 
 
 
 
-// {
-//     $.ajax({
-//         'url': '//freegeoip.net/json/?callback=?',
-//         // 'async': false,
-//         'dataType': "json",
-//         'success': function (data) {
-//             ipaddr = data.ip;
-//             iplocation = data.city;
-//             console.log(ipaddr);
-//             console.log("Obtained IP/Location");
-//             useIPLocation();
-//         }
 
+
+
+
+// queries the accuweather API
+// $.ajax({
+//     url: 'https://apidev.accuweather.com/locations/v1/search?q=' + iplocation + "&apikey=RK5LNtVj4ohC0rWnXWszuPMTMalyMMOC",
+//     type: "GET",
+//     dataType: 'json',
+//     contentType: "application/json",
+// })
+//     .done(function (weatherData) {
+//         console.log("it worked!");
+//         $('#weather').html(weatherData.WeatherIcon + weatherData.WeatherText);
 //     })
-// }
 
-// function useIPLocation() {
-//     if (ipaddr !== undefined) {
-//         // take ip and put it into the api call for weather data
-//         $("#ipaddress").html("Your current IP address is: " + ipaddr + ".");
-//         $("#location").html("Your current location is: " + iplocation + ".");
-//         console.log("here is the variable output");
-//         console.log(ipaddr);
+//     .fail(function (error) {
 
 
 
-    // calls the get location function
-        getLocation();
 
-        // queries the accuweather API
-        // $.ajax({
-        //     url: 'https://apidev.accuweather.com/locations/v1/search?q=' + iplocation + "&apikey=RK5LNtVj4ohC0rWnXWszuPMTMalyMMOC",
-        //     type: "GET",
-        //     dataType: 'json',
-        //     contentType: "application/json",
-        // })
-        //     .done(function (weatherData) {
-        //         console.log("it worked!");
-        //         $('#weather').html(weatherData.WeatherIcon + weatherData.WeatherText);
-        //     })
-
-        //     .fail(function (error) {
-                
-
-
-
-        //         alert("Oops! Something went wrong.");
-        //         console.log(error.getAllResponseHeaders());
-        //         $('#trending').append('<li>' + error.title + '</li>');
-        //     });
-
+//         alert("Oops! Something went wrong.");
+//         console.log(error.getAllResponseHeaders());
+//         $('#trending').append('<li>' + error.title + '</li>');
+//     });
 
 
 
@@ -113,24 +89,58 @@ function getLocation() {
     }
 }
 function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude; 
+    x.innerHTML = "Latitude: " + position.coords.latitude +
+        "<br>Longitude: " + position.coords.longitude;
 }
 
 
 function showError(error) {
-    switch(error.code) {
+    switch (error.code) {
         case error.PERMISSION_DENIED:
             x.innerHTML = "User denied the request for Geolocation."
+            getIPLocation(); // Reverts to user's IP location (less accurate)
             break;
         case error.POSITION_UNAVAILABLE:
-            x.innerHTML = "Location information is unavailable."
+            x.innerHTML = "Location information is unavailable. Using closest estimate."
+            getIPLocation();
             break;
         case error.TIMEOUT:
             x.innerHTML = "The request to get user location timed out."
+            getIPLocation();
             break;
         case error.UNKNOWN_ERROR:
             x.innerHTML = "An unknown error occurred."
             break;
+    }
+}
+
+
+// if the html5 location services do not work
+function getIPLocation() {
+    {
+        $.ajax({
+            'url': '//freegeoip.net/json/?callback=?',
+            // 'async': false,
+            'dataType': "json",
+            'success': function (data) {
+                ipaddr = data.ip;
+                iplocation = data.city;
+                console.log(ipaddr);
+                console.log("Obtained IP/Location");
+                useIPLocation();
+            }
+
+        })
+    }
+
+    function useIPLocation() {
+        if (ipaddr !== undefined) {
+            // take ip and put it into the api call for weather data
+            $("#ipaddress").html("Your current IP address is: " + ipaddr + ".");
+            $("#citylocation").html("Your current location is: " + iplocation + ".");
+            console.log("here is the variable output");
+            console.log(ipaddr);
+
+        }
     }
 }
