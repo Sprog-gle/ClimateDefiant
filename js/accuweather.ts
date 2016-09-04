@@ -7,35 +7,7 @@ var x = document.getElementById("location");
 
 
 
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
-function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude; 
-}
 
-
-function showError(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            x.innerHTML = "User denied the request for Geolocation."
-            break;
-        case error.POSITION_UNAVAILABLE:
-            x.innerHTML = "Location information is unavailable."
-            break;
-        case error.TIMEOUT:
-            x.innerHTML = "The request to get user location timed out."
-            break;
-        case error.UNKNOWN_ERROR:
-            x.innerHTML = "An unknown error occurred."
-            break;
-    }
-}
 
 
 
@@ -66,30 +38,30 @@ function showError(error) {
 
 
 
-
+    // calls the get location function
         getLocation();
 
+        // queries the accuweather API
+        // $.ajax({
+        //     url: 'https://apidev.accuweather.com/locations/v1/search?q=' + iplocation + "&apikey=RK5LNtVj4ohC0rWnXWszuPMTMalyMMOC",
+        //     type: "GET",
+        //     dataType: 'json',
+        //     contentType: "application/json",
+        // })
+        //     .done(function (weatherData) {
+        //         console.log("it worked!");
+        //         $('#weather').html(weatherData.WeatherIcon + weatherData.WeatherText);
+        //     })
 
-        $.ajax({
-            url: 'http://apidev.accuweather.com/locations/v1/search?q=' + iplocation + "&apikey=RK5LNtVj4ohC0rWnXWszuPMTMalyMMOC",
-            type: "GET",
-            dataType: 'json',
-            contentType: "application/json",
-        })
-            .done(function (weatherData) {
-                console.log("it worked!");
-                $('#weather').html(weatherData.WeatherIcon + weatherData.WeatherText);
-            })
-
-            .fail(function (error) {
+        //     .fail(function (error) {
                 
 
 
 
-                alert("Oops! Something went wrong.");
-                console.log(error.getAllResponseHeaders());
-                $('#trending').append('<li>' + error.title + '</li>');
-            });
+        //         alert("Oops! Something went wrong.");
+        //         console.log(error.getAllResponseHeaders());
+        //         $('#trending').append('<li>' + error.title + '</li>');
+        //     });
 
 
 
@@ -124,3 +96,41 @@ function showError(error) {
 // });
 // })
 
+
+
+
+
+
+
+
+
+// get location functions and error handling
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude; 
+}
+
+
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            x.innerHTML = "User denied the request for Geolocation."
+            break;
+        case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "Location information is unavailable."
+            break;
+        case error.TIMEOUT:
+            x.innerHTML = "The request to get user location timed out."
+            break;
+        case error.UNKNOWN_ERROR:
+            x.innerHTML = "An unknown error occurred."
+            break;
+    }
+}
