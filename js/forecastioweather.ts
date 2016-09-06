@@ -168,7 +168,7 @@ function getWeather() {
             'success': function (data) {
              //   location = data.LocalizedName;
                 var summary = data.daily.summary;
-                 $("#citylocation").html("The summary for your area is:" + summary);
+                 $("#citylocation").html(summary);
                console.log("Got Weather Data");
                console.log(data);
                
