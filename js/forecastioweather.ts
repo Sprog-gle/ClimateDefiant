@@ -89,17 +89,17 @@ function getLocation() {
         console.log("getLocation run");
     } else {
         x.innerHTML = "Geolocation is not supported by this browser.";
-        
+
     }
 }
 function showPosition(position) {
     x.innerHTML = "Latitude: " + position.coords.latitude +
         "<br>Longitude: " + position.coords.longitude;
-        lat = position.coords.latitude;
-        long = position.coords.longitude;
-        console.log("showPos run");
-        getWeather();
-        
+    lat = position.coords.latitude;
+    long = position.coords.longitude;
+    console.log("showPos run");
+    getWeather();
+
 }
 
 
@@ -160,20 +160,20 @@ function getIPLocation() {
 function getWeather() {
     console.log("get weather run");
 
-  $.ajax({
-            'url': 'https://api.forecast.io/forecast/b9b6583bd4214676a38808a223e86e5a/' + lat + ',' + long +'?units=uk',
-            crossDomain: true,
-            // 'async': false,
-            'dataType': "jsonp",
-            'success': function (data) {
-             //   location = data.LocalizedName;
-                var summary = data.daily.summary;
-                 $("#citylocation").html(summary);
-               console.log("Got Weather Data");
-               console.log(data);
-               
-            }
+    $.ajax({
+        'url': 'https://api.forecast.io/forecast/b9b6583bd4214676a38808a223e86e5a/' + lat + ',' + long + '?units=uk',
+        crossDomain: true,
+        // 'async': false,
+        'dataType': "jsonp",
+        'success': function (data) {
+            //   location = data.LocalizedName;
+            var summary = data.daily.summary;
+            $("#citylocation").html(summary);
+            console.log("Got Weather Data");
+            console.log(data);
 
-        })
+        }
+
+    })
 
 }
