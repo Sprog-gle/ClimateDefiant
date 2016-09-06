@@ -166,9 +166,9 @@ function getWeather() {
             // 'async': false,
             'dataType': "jsonp",
             'success': function (data) {
-                acculocation = data.LocalizedName;
-                var IDcode = data.AdministrativeArea.ID;
-                 $("#citylocation").html("Your current location is: " + acculocation + ", according to AccuWeather. ID: " + IDcode);
+             //   location = data.LocalizedName;
+                var summary = data.daily.summary;
+                 $("#citylocation").html("The summary for your area is:" + summary);
                console.log("Got Weather Data");
                console.log(data);
                
