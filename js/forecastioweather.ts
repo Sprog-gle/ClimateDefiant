@@ -4,7 +4,7 @@ var iplocation;
 var lat;
 var long;
 var acculocation;
-
+var currentCondition;
 
 var x = document.getElementById("location");
 
@@ -93,8 +93,8 @@ function getLocation() {
     }
 }
 function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude +
-        "<br>Longitude: " + position.coords.longitude;
+ //   x.innerHTML = "Latitude: " + position.coords.latitude +
+//        "<br>Longitude: " + position.coords.longitude;
     lat = position.coords.latitude;
     long = position.coords.longitude;
     console.log("showPos run");
@@ -146,8 +146,8 @@ function getIPLocation() {
     function useIPLocation() {
         if (ipaddr !== undefined) {
             // take ip and put it into the api call for weather data
-            $("#ipaddress").html("Your current IP address is: " + ipaddr + ".");
-            $("#citylocation").html("Your current location is: " + iplocation + ".");
+         //   $("#ipaddress").html("Your current IP address is: " + ipaddr + ".");
+        //    $("#citylocation").html("Your current location is: " + iplocation + ".");
             console.log("here is the variable output");
             console.log(ipaddr);
 
@@ -171,9 +171,18 @@ function getWeather() {
             $("#citylocation").html(summary);
             console.log("Got Weather Data");
             console.log(data);
+            currentCondition = data.currently.icon;
+
+
 
         }
 
     })
 
+    
+
 }
+
+
+
+
