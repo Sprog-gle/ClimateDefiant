@@ -109,14 +109,14 @@ function getIPLocation() {
 function getWeather() {
     console.log("get weather run");
     $.ajax({
-        'url': 'https://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=RK5LNtVj4ohC0rWnXWszuPMTMalyMMOC&q=' + lat + ',' + long,
+        'url': 'https://api.forecast.io/forecast/b9b6583bd4214676a38808a223e86e5a/' + lat + ',' + long + '?units=uk',
         crossDomain: true,
         // 'async': false,
         'dataType': "jsonp",
         'success': function (data) {
-            acculocation = data.LocalizedName;
-            var IDcode = data.AdministrativeArea.ID;
-            $("#citylocation").html("Your current location is: " + acculocation + ", according to AccuWeather. ID: " + IDcode);
+            //   location = data.LocalizedName;
+            var summary = data.daily.summary;
+            $("#citylocation").html(summary);
             console.log("Got Weather Data");
             console.log(data);
         }
