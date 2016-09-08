@@ -7,34 +7,41 @@
         <!--Custom CSS-->
         <link rel="stylesheet" type="text/css" href="./css/style.css">
 
+        <!-- Importing the custom fonts -->
+       <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
+
     </head>
     <body>
         <div class="container" id="page-container">
-            <h1 id="osSearch">
-                 WeatherReady
+            <h1 id="weather-title">
+                <span id="climate"> Climate</span>  <span id="defiant">Defiant</span>
             </h1>
-            <h3> Are you Weather ready? Or not? </h3>
+            <br>
             <!-- NB: glyphicon halflings are generally not free, but the developer made them free in bootstrap -->
+                    Current Time: <span id ="localDate"> </span>
+                 <hr> </hr>
+                 <h4> Are you weather ready? </h4>
+                 <div id="requirementImage">
+<img src="/images/umbrella_test.png" width="20%" height="20%"> </img>
+                </div>
 
-            <h2 id="page-header">
-               
-            </h2>
-            <div class="btn-wrapper">
-               <div id = "localTime">
-                  
-                    </id>
-                    <br> <div id ="localDate">
-                    Local Date Here
-                    </id>
-                    <br>
-            </div>
+                <div id="requirementReason"> 
+                    You will probably need an umbrella today. According to the forecast it will probably rain, or at least threaten to rain.
+                </div>
+                <hr> </hr>
+                <div class="currentForecast">
+ This is where the current forecast will display.
+
+
+                    </div>
+                <!--
           
             <p id="data"></p>
             <p id="location"></p>
             <p id="ipaddress"></p>
             <div id='weather'> </div>
             <div id="citylocation"> </div>
-
+-->
             
         </div>
 

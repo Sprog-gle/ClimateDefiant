@@ -1,6 +1,6 @@
 html {
 
-background: url("../images/bg.jpg") no-repeat center center fixed; 
+background-color: lightgray; 
 -webkit-background-size: cover;
  -moz-background-size: cover;
 -o-background-size: cover;
@@ -8,25 +8,54 @@ background: url("../images/bg.jpg") no-repeat center center fixed;
 }
 
 body {
-    color: white;
 background-color: transparent;
 }
 
-h1#osSearch {
+h3 {
+color: #333;
+background-color: transparent;
+font-family: 'Bitter';
+opacity: 0.4;
+}
+
+h1#weather-title {
+
+	text-align: center;
+	text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
+	color: #00BFFF;
+	opacity: 0.4;
+	font: 700 80px 'Bitter';
+    font-size: 104px;
+}
+
+#climate {
+text-align: center;
+	text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
+	color: #333;
+	opacity: 0.4;
+	font: 700 80px 'Bitter';
     font-size: 104px;
 
 }
 
-
 body #page-container {
     margin-top: 150px;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
-.searchbar {
-    padding: 100px 0;
-padding-bottom: 10px;
-    padding-left: 100px;
-    padding-right: 100px;
+
+#requirementImage {
+padding-top: 5%;
+padding-bottom: 5%;
+}
+
+#requirementReason{
+    padding-bottom: 5%;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #8c8c8c;
+  border-bottom: 1px solid #fff;
 }
