@@ -60,13 +60,9 @@ hr {
   border-bottom: 1px solid #fff;
 }
 
-#weatherIcon{
-    float: left;
-    padding-left: 40%;
-    padding-right: 0%;
+span#icon{
+    display:block;
 }
-
-.currentdesc{
-float:right;
-padding-right: 30%;
+span#temp{
+    display:inline-block;
 }
