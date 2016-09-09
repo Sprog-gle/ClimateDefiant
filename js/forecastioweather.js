@@ -137,7 +137,7 @@ function getWeather() {
             $("#currentCondDesc").html(summary);
             $("#temp").html("The temperature is currently " + currentTemp + "°C");
             $("#feelsLike").html("It currently feels like it is " + feelsLike + "°C"); // add option to change later.
-            $("#windSpeed").html("Winds are currently blowing at: " + windSpeed + "KM/h");
+            $("#windSpeed").html("Winds are currently blowing at: " + windSpeed + "Km/h");
             $("#humidity").html("Humidity is currently: " + humidity + "%");
         }
     });
