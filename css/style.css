@@ -25,7 +25,7 @@ h1#weather-title {
 	color: #00BFFF;
 	opacity: 0.4;
 	font: 700 80px 'Bitter';
-    font-size: 104px;
+    font-size: 8vw;
 }
 
 #climate {
@@ -34,14 +34,14 @@ text-align: center;
 	color: #333;
 	opacity: 0.4;
 	font: 700 80px 'Bitter';
-    font-size: 104px;
+    font-size: 8vw;
 
 }
 
 body #page-container {
     margin-top: 3%;
     text-align: center;
-    margin-bottom: 20px;
+
 }
 
 
