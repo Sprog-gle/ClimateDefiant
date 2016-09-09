@@ -62,12 +62,11 @@ hr {
 
 #weatherIcon{
     float: left;
-    padding-left: 30%;
-    padding-right: 0;
+    padding-left: 40%;
+    padding-right: 0%;
 }
 
-#currentdesc{
+.currentdesc{
 float:right;
-padding-right: 40%;
-padding-left: 0;
+padding-right: 30%;
 }
