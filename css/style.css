@@ -51,7 +51,7 @@ padding-bottom: 5%;
 }
 
 #requirementReason{
-    padding-bottom: 3%;
+    padding-bottom: 5%;
 }
 
 hr {
@@ -60,9 +60,15 @@ hr {
   border-bottom: 1px solid #fff;
 }
 
-span#icon{
-    display:block;
+.containerCurrent{
+text-align: center;
+display:inline;
 }
-span#temp{
-    display:inline-block;
+
+#currentIcon{
+    display: block;
+}
+
+#currentDesc{
+    display:block;
 }

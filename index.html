@@ -1,66 +1,70 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Weather Ready</title>
-        <!--Boostrap's CSS-->
-        <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
-        <!--Custom CSS-->
-        <link rel="stylesheet" type="text/css" href="./css/style.css">
 
-        <!-- Importing the custom fonts -->
-       <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
-       <!-- load the weather icons -->
-       <script src="./js/skycons.js"> </script>
+<head>
+    <title>Weather Ready</title>
+    <!--Boostrap's CSS-->
+    <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!--Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Importing the custom fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
+    <!-- load the weather icons -->
+    <script src="./js/skycons.js"> </script>
 
-    </head>
-    <body>
-        <div class="container" id="page-container">
-            <h1 id="weather-title">
-                <span id="climate"> Climate</span>  <span id="defiant">Defiant</span>
-            </h1>
-            <br>
-            <!-- NB: glyphicon halflings are generally not free, but the developer made them free in bootstrap -->
-                    Current Time: <span id ="localDate"> </span>
-                 <hr> </hr>
-                 <h3> Are you weather ready? </h3>
-                 <div id="requirementImage">
-<img src="/images/umbrella_test.png" width="20%" height="20%"> </img>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <div class="container" id="page-container">
+        <h1 id="weather-title">
+            <span id="climate"> Climate</span> <span id="defiant">Defiant</span>
+        </h1>
+        <br>
+        <!-- NB: glyphicon halflings are generally not free, but the developer made them free in bootstrap -->
+        Current Time: <span id="localDate"> </span>
+        <hr> </hr>
+        <h3> Are you weather ready? </h3>
+        <div id="requirementImage">
+            <img src="/images/umbrella_test.png" width="20%" height="20%"> </img>
+        </div>
+
+        <div id="requirementReason">
+            You will probably need an umbrella today. According to the forecast it will probably rain, or at least threaten to rain.
+        </div>
+        <hr> </hr>
+        <div class="currentForecast">
+            <h3> Current Conditions: </h3>
+
+            <div class="containerCurrent">
+                <br>
+
+                <div id="currentIcon">
+                    <canvas id="weatherIcon" width="100%" height="100%"></canvas>
                 </div>
-                
-                <div id="requirementReason"> 
-                    You will probably need an umbrella today. According to the forecast it will probably rain, or at least threaten to rain.
+
+                <div id="currentDesc">
+                    <span id="currentCondDesc"> Loading... </span> <br>
+                    <span id="temp">  Loading... </span><br>
+                    <span id="feelsLike"> Loading...</span><br>
+                    <span id="windSpeed">  Loading...</span><br>
+                    <span id="humidity"> Loading... </span><br>
+                    <br>
                 </div>
-                <hr> </hr>
-                <div class="currentForecast">
- <h3> Current Conditions: </h3>
 
-    <br>
-<span id="icon">
- <canvas id="weatherIcon" width="100%" height="100%"></canvas> </span>
-    <span id="temp"><h4> Rain</h4> </span>    <br>
-    <span id="temp"> The current temperature is: </span><br>
-    <span id="temp"> feels like: </span><br>
-    <span id="temp"> Something else LMAO: </span><br>
-    <br>
-
- 
+            </div>
+        </div>
 
 
+        <hr> </hr>
+        <div class="Sound">
 
 
+        </div>
 
-                    </div>
-
-
-<hr> </hr>
-<div class="Sound"> 
-
-
-</div>
-
-                <!--
+        <!--
           
             <p id="data"></p>
             <p id="location"></p>
@@ -68,17 +72,18 @@
             <div id='weather'> </div>
             <div id="citylocation"> </div>
 -->
-            
-        </div> 
 
-        <!--jQuery Script-->
-        <script src="./node_modules/jquery/dist/jquery.min.js"></script>
-        <!--Bootstrap Script-->
-        <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-        <!--Custom Script-->
-        <script src="./js/time.js"> </script>
-        <script src="./js/forecastioweather.js"> </script>
-        <script src="./js/weathericons.js"> </script>
-         
-    </body>
+    </div>
+
+    <!--jQuery Script-->
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <!--Bootstrap Script-->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--Custom Script-->
+    <script src="./js/time.js"> </script>
+    <script src="./js/forecastioweather.js"> </script>
+    <script src="./js/weathericons.js"> </script>
+
+</body>
+
 </html>

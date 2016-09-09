@@ -4,6 +4,11 @@ var lat;
 var long;
 var acculocation;
 var currentCondition;
+var currentTemp;
+var feelsLike;
+var setIcon;
+var humidity;
+var windSpeed;
 var x = document.getElementById("location");
 // calls the get location function
 getLocation();
@@ -120,7 +125,20 @@ function getWeather() {
             $("#citylocation").html(summary);
             console.log("Got Weather Data");
             console.log(data);
+            // change var to data from the api call
+            summary = data.currently.summary;
             currentCondition = data.currently.icon;
+            currentTemp = data.currently.temperature;
+            feelsLike = data.currently.apparentTemperature;
+            humidity = data.currently.humidity;
+            windSpeed = data.currently.windSpeed;
+            setIcon = data.currently.icon; // set the icon string to the api data. Then use that to set the icon (NEEDS TO BE DONE)
+            // Change HTML elements to reflect weather
+            $("#currentCondDesc").html(summary);
+            $("#temp").html("The temperature is currently " + currentTemp + "°C");
+            $("#feelsLike").html("It currently feels like it is " + feelsLike + "°C"); // add option to change later.
+            $("#windSpeed").html("Winds are currently blowing at: " + windSpeed + "KM/h");
+            $("#humidity").html("Humidity is currently: " + humidity + "%");
         }
     });
 }
