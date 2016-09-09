@@ -51,7 +51,7 @@ padding-bottom: 5%;
 }
 
 #requirementReason{
-    padding-bottom: 5%;
+    padding-bottom: 3%;
 }
 
 hr {
@@ -61,29 +61,13 @@ hr {
 }
 
 #weatherIcon{
-    
     float: left;
+    padding-left: 30%;
+    padding-right: 0;
 }
 
 #currentdesc{
 float:right;
-
-}
-
-.outerdiv{
-width:30%;
-height:100%;
-margin:0 auto ;
-overflow:auto;
-}
-.div1{
-float:left;
-width:60%;
-height:100%;
-padding-right: 5%;
-}
-.div2{
-height:100%;
-margin-left:60%;
-padding-left:5%;
+padding-right: 40%;
+padding-left: 0;
 }
