@@ -9,44 +9,17 @@ var feelsLike;
 var setIcon;
 var humidity;
 var windSpeed;
+var randomMaxValue;
+var songMood;
 var x = document.getElementById("location");
+window.onload = function () {
+    console.log('sc');
+    SC.initialize({
+        client_id: "a8d5228ca716551510abb70e88c78d10",
+    });
+};
 // calls the get location function
 getLocation();
-// queries the accuweather API
-// $.ajax({
-//     url: 'https://apidev.accuweather.com/locations/v1/search?q=' + iplocation + "&apikey=RK5LNtVj4ohC0rWnXWszuPMTMalyMMOC",
-//     type: "GET",
-//     dataType: 'json',
-//     contentType: "application/json",
-// })
-//     .done(function (weatherData) {
-//         console.log("it worked!");
-//         $('#weather').html(weatherData.WeatherIcon + weatherData.WeatherText);
-//     })
-//     .fail(function (error) {
-//         alert("Oops! Something went wrong.");
-//         console.log(error.getAllResponseHeaders());
-//         $('#trending').append('<li>' + error.title + '</li>');
-//     });
-//    $.ajax({
-// url: "http://dataservice.accuweather.com/locations/v1/cities/ipaddress",
-//             type: "GET",
-//             //dataType: 'json',
-//             dataType: 'jsonp',
-//           //  data: "{body}",
-//             contentType: "application/json",
-//    })
-//   .done(function (data){
-//  $('#trending').append('<li>'+data.name+'</li>');
-//  console.log("it worked!");
-// // console.log(data);
-//  console.log(data.getAllResponseHeaders);
-//    })
-//    .fail (function (error) {
-//    console.log(error.getAllResponseHeaders());
-//     $('#trending').append('<li>'+error.title+'</li>');
-// });
-// })
 // get location functions and error handling
 function getLocation() {
     if (navigator.geolocation) {
@@ -128,17 +101,86 @@ function getWeather() {
             // change var to data from the api call
             summary = data.currently.summary;
             currentCondition = data.currently.icon;
-            currentTemp = data.currently.temperature;
-            feelsLike = data.currently.apparentTemperature;
-            humidity = data.currently.humidity;
-            windSpeed = data.currently.windSpeed;
+            console.log(currentCondition);
+            currentTemp = data.currently.temperature.toFixed(0);
+            feelsLike = data.currently.apparentTemperature.toFixed(0);
+            humidity = data.currently.humidity * 100;
+            windSpeed = data.currently.windSpeed.toFixed(0);
             setIcon = data.currently.icon; // set the icon string to the api data. Then use that to set the icon (NEEDS TO BE DONE)
+            // Set the weather icon to the correct forecast.
+            var skycons = new Skycons({ "color": "darkgrey" });
+            skycons.set("weatherIcon", currentCondition);
+            // start animation!
+            skycons.play();
             // Change HTML elements to reflect weather
             $("#currentCondDesc").html(summary);
-            $("#temp").html("The temperature is currently " + currentTemp + "°C");
-            $("#feelsLike").html("It currently feels like it is " + feelsLike + "°C"); // add option to change later.
-            $("#windSpeed").html("Winds are currently blowing at: " + windSpeed + "Km/h");
+            $("#temp").html("The temperature is currently " + currentTemp + "&deg;C");
+            $("#feelsLike").html("It currently feels like it is " + feelsLike + "&deg;C"); // add option to change later.
+            $("#windSpeed").html("Winds are currently peaking at: " + windSpeed + " KM/h");
             $("#humidity").html("Humidity is currently: " + humidity + "%");
+            setWeatherConditions();
         }
+    });
+}
+function setWeatherConditions() {
+    console.log('setSongMood');
+    if (currentCondition === 'clear-day') {
+        songMood = 'https://soundcloud.com/samueljhunt/sets/sunnyday';
+        randomMaxValue = Math.floor((Math.random() * 14) + 1);
+        getSounds();
+    }
+    else if (currentCondition === 'clear-night') {
+        songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy-night';
+        randomMaxValue = Math.floor((Math.random() * 7) + 1);
+        getSounds();
+    }
+    else if (currentCondition === 'rain') {
+        songMood = 'https://soundcloud.com/samueljhunt/sets/rainyday';
+        randomMaxValue = Math.floor((Math.random() * 11) + 1);
+        getSounds();
+    }
+    else if (currentCondition === 'snow') {
+        songMood = 'https://soundcloud.com/samueljhunt/sets/snow';
+        randomMaxValue = Math.floor((Math.random() * 5) + 1);
+        getSounds();
+    }
+    else if (currentCondition === 'sleet') {
+        songMood = 'https://soundcloud.com/samueljhunt/sets/snow';
+        randomMaxValue = Math.floor((Math.random() * 5) + 1);
+        getSounds();
+    }
+    else if (currentCondition === 'wind') {
+        songMood = 'https://soundcloud.com/samueljhunt/sets/wind-1';
+        randomMaxValue = Math.floor((Math.random() * 7) + 1);
+        getSounds();
+    }
+    else if (currentCondition === 'fog') {
+        songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy';
+        randomMaxValue = Math.floor((Math.random() * 11) + 1);
+        getSounds();
+    }
+    else if (currentCondition === 'cloudy') {
+        songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy';
+        randomMaxValue = Math.floor((Math.random() * 11) + 1);
+        getSounds();
+    }
+    else if (currentCondition === 'partly-cloudy-day') {
+        songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy';
+        randomMaxValue = Math.floor((Math.random() * 11) + 1);
+        console.log('if statement');
+        getSounds();
+    }
+    else if (currentCondition === 'partly-cloudy-night') {
+        songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy-night';
+        randomMaxValue = Math.floor((Math.random() * 7) + 1);
+        getSounds();
+    }
+}
+function getSounds() {
+    console.log('before oEmbed');
+    SC.oEmbed(songMood, { maxheight: 200, auto_play: false, show_comments: false, start_track: randomMaxValue }).then(function (oEmbed) {
+        console.log('oEmbed response: ', oEmbed);
+        $("#player").html(oEmbed.html);
+        console.log('setplayer');
     });
 }
