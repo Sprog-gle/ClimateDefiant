@@ -90,21 +90,60 @@ if it's not present, don't show loader */
 }
 
 #loadingText{
-    position: absolute;
-    width: 200px;
-    height: 50px;
-    top: 50%;
-    left: 47%;
-    margin-left: -50px; /* margin is -0.5 * dimension */
-    margin-top: 30px; 
+  height: 110%;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
 }
 
 #manualLocation{
-    position: absolute;
-    width: 500px;
-    height: 50px;
-    top: 60%;
-    left: 40%;
-    margin-left: -50px; /* margin is -0.5 * dimension */
-    margin-top: 30px; 
+  height: 130%;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+}
+
+#addressBox {
+    margin-top:60vh;
+    margin-left: 35%;
+  height: 500px;
+  position: relative;
+  width: 650px;
+
+}
+
+#addressBox-inner {
+  width: inherit;
+}
+
+#addressBox-input {
+  border: none;
+  font-family: 'Open Sans';
+  font-size: 24px;
+  padding:  10px;
+  text-align: left;
+  width: inherit;
+}
+
+#addressBox-link {
+  background: #E67E22;
+  box-sizing: border-box;
+  color: white;
+  font-size: 24px;
+  height: 53px;
+  padding: 12px;
+  padding-left: 16px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 53px;
+}
+
+#addressBox-link:hover {
+  background: #CC701E;
+  cursor: pointer;
 }
