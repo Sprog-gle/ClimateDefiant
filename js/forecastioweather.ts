@@ -58,6 +58,7 @@ function showError(error) {
             break;
         case error.UNKNOWN_ERROR:
          //   x.innerHTML = "An unknown error occurred."
+         manualLocation();
             break;
     }
 }
