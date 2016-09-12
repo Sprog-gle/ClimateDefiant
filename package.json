@@ -5,10 +5,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "bootstrap": "^3.3.7",
-    "express": "^4.14.0",
-    "jquery": "^3.1.0",
-    "node-bing-api": "^2.4.1"
+  "bootstrap": "^3.3.7",
+  "jquery": "^3.1.0"
   },
   "devDependencies": {},
   "scripts": {

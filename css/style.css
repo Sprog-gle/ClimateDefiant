@@ -106,3 +106,12 @@ if it's not present, don't show loader */
   align-items: center;
   justify-content: center;
 }
+
+#search{
+    height: 130%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+}

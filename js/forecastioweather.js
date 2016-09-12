@@ -23,7 +23,7 @@ getLocation();
 // get location functions and error handling
 function getLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, showError, { timeout: 8000 });
+        navigator.geolocation.getCurrentPosition(showPosition);
         console.log("getLocation run");
     }
     else {
@@ -31,11 +31,20 @@ function getLocation() {
         console.log("error");
     }
 }
+function showPosition(position) {
+    //   x.innerHTML = "Latitude: " + position.coords.latitude +
+    //        "<br>Longitude: " + position.coords.longitude;
+    lat = position.coords.latitude;
+    long = position.coords.longitude;
+    console.log("showPos run");
+    getWeather();
+}
 function showError(error) {
     switch (error.code) {
         case error.PERMISSION_DENIED:
             // x.innerHTML = "User denied the request for Geolocation."
             manualLocation(); // Reverts to user's IP location (less accurate)
+            console.log("test");
             break;
         case error.POSITION_UNAVAILABLE:
             //   x.innerHTML = "Location information is unavailable. Using closest estimate."
@@ -48,60 +57,17 @@ function showError(error) {
         case error.UNKNOWN_ERROR:
             //   x.innerHTML = "An unknown error occurred."
             manualLocation();
+            console.log("error");
             break;
     }
 }
-function showPosition(position) {
-    //   x.innerHTML = "Latitude: " + position.coords.latitude +
-    //        "<br>Longitude: " + position.coords.longitude;
-    lat = position.coords.latitude;
-    long = position.coords.longitude;
-    console.log("showPos run");
-    getWeather();
-}
 function manualLocation() {
-    $("loadingText").html("Sorry, we couldn't detect your location. Please type your location in the box below.");
+    console.log("manloc");
+    $("#loadingText").html("Sorry, we couldn't detect your location. Please type your location in the box below.");
+    document.getElementById('search').style.display = 'flex';
 }
 // if the html5 location services do not work
 // haven't added it to do anything else after this yet'
-var placeSearch, autocomplete;
-var componentForm = {
-    street_number: 'short_name',
-    route: 'long_name',
-    locality: 'long_name',
-    administrative_area_level_1: 'short_name',
-    country: 'long_name',
-    postal_code: 'short_name'
-};
-function initAutocomplete() {
-    // Create the autocomplete object, restricting the search to geographical
-    // location types.
-    autocomplete = new google.maps.places.Autocomplete(
-    /** @type {!HTMLInputElement} */ (document.getElementById('addressBox-input')), { types: ['geocode'] });
-    // When the user selects an address from the dropdown, populate the address
-    // fields in the form.
-    autocomplete.addListener('place_changed', fillInAddress);
-}
-function fillInAddress() {
-    // Get the place details from the autocomplete object.
-    var place = autocomplete.getPlace();
-    for (var component in componentForm) {
-        if (document.getElementById(component) == null) {
-            continue;
-        }
-        document.getElementById(component).value = '';
-        document.getElementById(component).disabled = false;
-    }
-    // Get each component of the address from the place details
-    // and fill the corresponding field on the form.
-    for (var i = 0; i < place.address_components.length; i++) {
-        var addressType = place.address_components[i].types[0];
-        if (componentForm[addressType]) {
-            var val = place.address_components[i][componentForm[addressType]];
-            document.getElementById(addressType).value = val;
-        }
-    }
-}
 // using the geolocation information with accuweather
 function getWeather() {
     console.log("get weather run");
