@@ -38,7 +38,7 @@ function getLocation() {
         console.log("getLocation run");
     } else {
         x.innerHTML = "Geolocation is not supported by this browser.";
-
+        console.log("error");
     }
 }
 
