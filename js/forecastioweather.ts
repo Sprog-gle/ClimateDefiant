@@ -189,7 +189,7 @@ function setWeatherConditions() {
         randomMaxValue = Math.floor((Math.random() * 11) + 1);
         getSounds();
     } else if (currentCondition === 'partly-cloudy-day') {
-        $("requirementImage").append("<img id='theImg' src='sunscreen.png'size='20%'' height='20%'/>");
+        $("requirementImage").append("<img id='theImg' src='sunscreen.png'size='20%'' height='20%'/> test");
         songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy';
         randomMaxValue = Math.floor((Math.random() * 11) + 1);
         console.log('if statement');
