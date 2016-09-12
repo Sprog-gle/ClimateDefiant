@@ -41,15 +41,6 @@ function getLocation() {
 
     }
 }
-function showPosition(position) {
-    //   x.innerHTML = "Latitude: " + position.coords.latitude +
-    //        "<br>Longitude: " + position.coords.longitude;
-    lat = position.coords.latitude;
-    long = position.coords.longitude;
-    console.log("showPos run");
-    getWeather();
-
-}
 
 function showError(error) {
     switch (error.code) {
@@ -70,6 +61,18 @@ function showError(error) {
             break;
     }
 }
+
+function showPosition(position) {
+    //   x.innerHTML = "Latitude: " + position.coords.latitude +
+    //        "<br>Longitude: " + position.coords.longitude;
+    lat = position.coords.latitude;
+    long = position.coords.longitude;
+    console.log("showPos run");
+    getWeather();
+
+}
+
+
 
 
 function manualLocation() {
