@@ -119,68 +119,80 @@ function getWeather() {
             $("#windSpeed").html("Winds are currently peaking at: " + windSpeed + " KM/h");
             $("#humidity").html("Humidity is currently: " + humidity + "%");
             setWeatherConditions();
+            // end the loading animation
+            $(".se-pre-con").fadeOut("slow");
         }
     });
 }
 function setWeatherConditions() {
     console.log('setSongMood');
     if (currentCondition === 'clear-day') {
-        $("requirementImage").append("<img id='theImg' src='sunscreen.png' size='20%'' height='20%'/>");
+        $("requirementImage").html("<img id='theImg' src='sunscreen.png'   width='10%' height='10%'/>");
+        $("#requirementReason").html("It looks like the sun will be out in full force. It's going to be a stinger without your sunscreen. Be sure to slip, slop, slap and wrap.");
         songMood = 'https://soundcloud.com/samueljhunt/sets/sunnyday';
         randomMaxValue = Math.floor((Math.random() * 14) + 1);
         getSounds();
     }
     else if (currentCondition === 'clear-night') {
-        $("requirementImage").append("<img id='theImg' src='sunscreen.png'size='20%'' height='20%'/>"); // make icon for night
+        $("requirementImage").html("<img id='theImg' src='sunscreen.png'   width='10%' height='10%'/>"); // make icon for night
+        $("#requirementReason").html("It looks like tonight is going to be a beautiful one, look up and count the stars. Have a good night.");
         songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy-night';
         randomMaxValue = Math.floor((Math.random() * 7) + 1);
         getSounds();
     }
     else if (currentCondition === 'rain') {
-        $("requirementImage").append("<img id='theImg' src='umbrella.png'size='20%'' height='20%'/>");
+        $("requirementImage").html("<img id='theImg' src='umbrella.png'  width='20%' height='20%'/>");
+        $("#requirementReason").html("Ah, looks like today may not be as bright as expected. You may want to take an umbrella.");
         songMood = 'https://soundcloud.com/samueljhunt/sets/rainyday';
         randomMaxValue = Math.floor((Math.random() * 11) + 1);
         getSounds();
     }
     else if (currentCondition === 'snow') {
-        $("requirementImage").append("<img id='theImg' src='jacket.png'size='20%'' height='20%'/>");
+        $("requirementImage").html("<img id='theImg' src='jacket.png'  width='20%' height='20%'/>");
+        $("#requirementReason").html("Brr, it must be very cold outside. It also may/be snowing so prepare a jacket.");
         songMood = 'https://soundcloud.com/samueljhunt/sets/snow';
         randomMaxValue = Math.floor((Math.random() * 5) + 1);
         getSounds();
     }
     else if (currentCondition === 'sleet') {
-        $("requirementImage").append("<img id='theImg' src='jacket.png'size='20%'' height='20%'/>");
+        $("requirementImage").html("<img id='theImg' src='jacket.png'  width='20%' height='20%'/>");
+        $("#requirementReason").html("Brr, it must be very cold outside. It also may/be snowing so prepare a jacket.");
         songMood = 'https://soundcloud.com/samueljhunt/sets/snow';
         randomMaxValue = Math.floor((Math.random() * 5) + 1);
         getSounds();
     }
     else if (currentCondition === 'wind') {
-        $("requirementImage").append("<img id='theImg' src='jacket.png'size='20%'' height='20%'/>");
+        $("requirementImage").html("<img id='theImg' src='jacket.png'  width='20%' height='20%'/>");
+        $("#requirementReason").html("Hold on to your hat! It's looking a little windy out there. Snuggle up with some warm clothes too, it may be cold.");
         songMood = 'https://soundcloud.com/samueljhunt/sets/wind-1';
         randomMaxValue = Math.floor((Math.random() * 7) + 1);
         getSounds();
     }
     else if (currentCondition === 'fog') {
-        $("requirementImage").append("<img id='theImg' src='jacket.png'size='20%'' height='20%'/>");
+        $("requirementImage").html("<img id='theImg' src='jacket.png'  width='20%' height='20%'/>");
+        $("#requirementReason").html("Can you see anything? I feel like the visibility has been reduced. Take care out there.");
         songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy';
         randomMaxValue = Math.floor((Math.random() * 11) + 1);
         getSounds();
     }
     else if (currentCondition === 'cloudy') {
-        $("requirementImage").append("<img id='theImg' src='sunscreen.png'size='20%'' height='20%'/>"); // make one for cloudy
+        $("requirementImage").html("<img id='theImg' src='sunscreen.png width='10%' height='10%'/>"); // make one for cloudy
+        $("#requirementReason").html("Well it looks like the clouds have come to say hello. Don't forget you can still get burnt.");
         songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy';
         randomMaxValue = Math.floor((Math.random() * 11) + 1);
         getSounds();
     }
     else if (currentCondition === 'partly-cloudy-day') {
-        $("requirementImage").append("<img id='theImg' src='sunscreen.png'size='20%'' height='20%'/> test");
+        $("#requirementImage").html("<img id='theImg' src='./images/sunscreen.png'  width='10%' height='10%'/>");
+        $("#requirementReason").html("Hey, it's a little cloudy but the sun will be peaking out during the day. Keep yourself safe, and take some sunscreen.");
         songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy';
         randomMaxValue = Math.floor((Math.random() * 11) + 1);
         console.log('if statement');
         getSounds();
     }
     else if (currentCondition === 'partly-cloudy-night') {
-        $("requirementImage").append("<img id='theImg' src='sunscreen.png'size='20%'' height='20%'/>"); // also change this one
+        $("requirementImage").html("<img id='theImg' src='sunscreen.png'   width='10%' height='10%'/>"); // also change this one
+        $("#requirementReason").html("It looks like the stars may be slightly obscured by the clouds tonight. Have a good night.");
         songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy-night';
         randomMaxValue = Math.floor((Math.random() * 7) + 1);
         getSounds();
