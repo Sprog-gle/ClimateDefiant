@@ -88,3 +88,13 @@ if it's not present, don't show loader */
 	z-index: 9999;
 	background: url(../images/Preloader.gif) center no-repeat #fff;
 }
+
+#loadingText{
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    top: 50%;
+    left: 47%;
+    margin-left: -50px; /* margin is -0.5 * dimension */
+    margin-top: 30px; 
+}
