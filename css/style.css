@@ -86,19 +86,11 @@ if it's not present, don't show loader */
 	width: 100%;
 	height: 100%;
 	z-index: 9999;
-	background: url(../images/Preloader.gif) center no-repeat #fff;
+	background: url(../images/findlocation.gif) center no-repeat #fff;
+    background-size: 15vw;
 }
 
 #loadingText{
-  height: 110%;
-  width: 100%;
-  display: flex;
-  position: fixed;
-  align-items: center;
-  justify-content: center;
-}
-
-#manualLocation{
   height: 130%;
   width: 100%;
   display: flex;
@@ -107,8 +99,17 @@ if it's not present, don't show loader */
   justify-content: center;
 }
 
+#manualLocation{
+  height: 150%;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+}
+
 #search{
-    height: 130%;
+    height: 150%;
   width: 100%;
   display: none;
   position: fixed;

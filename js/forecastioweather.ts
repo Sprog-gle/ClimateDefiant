@@ -82,7 +82,6 @@ function manualLocation() {
 console.log("manloc");
     $("#loadingText").html("Sorry, we couldn't detect your location. Please type your location in the box below.");
    document.getElementById('search').style.display = 'flex';
-
 }
 
 // if the html5 location services do not work
