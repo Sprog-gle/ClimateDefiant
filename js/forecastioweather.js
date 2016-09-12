@@ -125,52 +125,62 @@ function getWeather() {
 function setWeatherConditions() {
     console.log('setSongMood');
     if (currentCondition === 'clear-day') {
+        $("requirementImage").append("<img id='theImg' src='sunscreen.png' size='20%'' height='20%'/>");
         songMood = 'https://soundcloud.com/samueljhunt/sets/sunnyday';
         randomMaxValue = Math.floor((Math.random() * 14) + 1);
         getSounds();
     }
     else if (currentCondition === 'clear-night') {
+        $("requirementImage").append("<img id='theImg' src='sunscreen.png'size='20%'' height='20%'/>"); // make icon for night
         songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy-night';
         randomMaxValue = Math.floor((Math.random() * 7) + 1);
         getSounds();
     }
     else if (currentCondition === 'rain') {
+        $("requirementImage").append("<img id='theImg' src='umbrella.png'size='20%'' height='20%'/>");
         songMood = 'https://soundcloud.com/samueljhunt/sets/rainyday';
         randomMaxValue = Math.floor((Math.random() * 11) + 1);
         getSounds();
     }
     else if (currentCondition === 'snow') {
+        $("requirementImage").append("<img id='theImg' src='jacket.png'size='20%'' height='20%'/>");
         songMood = 'https://soundcloud.com/samueljhunt/sets/snow';
         randomMaxValue = Math.floor((Math.random() * 5) + 1);
         getSounds();
     }
     else if (currentCondition === 'sleet') {
+        $("requirementImage").append("<img id='theImg' src='jacket.png'size='20%'' height='20%'/>");
         songMood = 'https://soundcloud.com/samueljhunt/sets/snow';
         randomMaxValue = Math.floor((Math.random() * 5) + 1);
         getSounds();
     }
     else if (currentCondition === 'wind') {
+        $("requirementImage").append("<img id='theImg' src='jacket.png'size='20%'' height='20%'/>");
         songMood = 'https://soundcloud.com/samueljhunt/sets/wind-1';
         randomMaxValue = Math.floor((Math.random() * 7) + 1);
         getSounds();
     }
     else if (currentCondition === 'fog') {
+        $("requirementImage").append("<img id='theImg' src='jacket.png'size='20%'' height='20%'/>");
         songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy';
         randomMaxValue = Math.floor((Math.random() * 11) + 1);
         getSounds();
     }
     else if (currentCondition === 'cloudy') {
+        $("requirementImage").append("<img id='theImg' src='sunscreen.png'size='20%'' height='20%'/>"); // make one for cloudy
         songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy';
         randomMaxValue = Math.floor((Math.random() * 11) + 1);
         getSounds();
     }
     else if (currentCondition === 'partly-cloudy-day') {
+        $("requirementImage").append("<img id='theImg' src='sunscreen.png'size='20%'' height='20%'/>");
         songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy';
         randomMaxValue = Math.floor((Math.random() * 11) + 1);
         console.log('if statement');
         getSounds();
     }
     else if (currentCondition === 'partly-cloudy-night') {
+        $("requirementImage").append("<img id='theImg' src='sunscreen.png'size='20%'' height='20%'/>"); // also change this one
         songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy-night';
         randomMaxValue = Math.floor((Math.random() * 7) + 1);
         getSounds();
