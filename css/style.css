@@ -98,3 +98,13 @@ if it's not present, don't show loader */
     margin-left: -50px; /* margin is -0.5 * dimension */
     margin-top: 30px; 
 }
+
+#manualLocation{
+    position: absolute;
+    width: 500px;
+    height: 50px;
+    top: 60%;
+    left: 40%;
+    margin-left: -50px; /* margin is -0.5 * dimension */
+    margin-top: 30px; 
+}

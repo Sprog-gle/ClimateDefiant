@@ -42,48 +42,26 @@ function showError(error) {
     switch (error.code) {
         case error.PERMISSION_DENIED:
             x.innerHTML = "User denied the request for Geolocation.";
-            getIPLocation(); // Reverts to user's IP location (less accurate)
+            manualLocation(); // Reverts to user's IP location (less accurate)
             break;
         case error.POSITION_UNAVAILABLE:
             x.innerHTML = "Location information is unavailable. Using closest estimate.";
-            getIPLocation();
+            manualLocation();
             break;
         case error.TIMEOUT:
             x.innerHTML = "The request to get user location timed out.";
-            getIPLocation();
+            manualLocation();
             break;
         case error.UNKNOWN_ERROR:
             x.innerHTML = "An unknown error occurred.";
             break;
     }
 }
+function manualLocation() {
+    $("loadingText").html("Sorry, we couldn't detect your location. Please type your location in the box below.");
+}
 // if the html5 location services do not work
 // haven't added it to do anything else after this yet'
-function getIPLocation() {
-    {
-        $.ajax({
-            'url': '//freegeoip.net/json/?callback=?',
-            // 'async': false,
-            'dataType': "json",
-            'success': function (data) {
-                ipaddr = data.ip;
-                iplocation = data.city;
-                console.log(ipaddr);
-                console.log("Obtained IP/Location");
-                useIPLocation();
-            }
-        });
-    }
-    function useIPLocation() {
-        if (ipaddr !== undefined) {
-            // take ip and put it into the api call for weather data
-            //   $("#ipaddress").html("Your current IP address is: " + ipaddr + ".");
-            //    $("#citylocation").html("Your current location is: " + iplocation + ".");
-            console.log("here is the variable output");
-            console.log(ipaddr);
-        }
-    }
-}
 // using the geolocation information with accuweather
 function getWeather() {
     console.log("get weather run");
@@ -127,56 +105,56 @@ function getWeather() {
 function setWeatherConditions() {
     console.log('setSongMood');
     if (currentCondition === 'clear-day') {
-        $("requirementImage").html("<img id='theImg' src='sunscreen.png'   width='10%' height='10%'/>");
+        $("#requirementImage").html("<img id='theImg' src='./images/sunscreen.png'   width='10%' height='10%'/>");
         $("#requirementReason").html("It looks like the sun will be out in full force. It's going to be a stinger without your sunscreen. Be sure to slip, slop, slap and wrap.");
         songMood = 'https://soundcloud.com/samueljhunt/sets/sunnyday';
         randomMaxValue = Math.floor((Math.random() * 14) + 1);
         getSounds();
     }
     else if (currentCondition === 'clear-night') {
-        $("requirementImage").html("<img id='theImg' src='sunscreen.png'   width='10%' height='10%'/>"); // make icon for night
+        $("#requirementImage").html("<img id='theImg' src='./images/night.png'   width='10%' height='10%'/>"); // make icon for night
         $("#requirementReason").html("It looks like tonight is going to be a beautiful one, look up and count the stars. Have a good night.");
         songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy-night';
         randomMaxValue = Math.floor((Math.random() * 7) + 1);
         getSounds();
     }
     else if (currentCondition === 'rain') {
-        $("requirementImage").html("<img id='theImg' src='umbrella.png'  width='20%' height='20%'/>");
+        $("#requirementImage").html("<img id='theImg' src='./images/umbrella.png'  width='20%' height='20%'/>");
         $("#requirementReason").html("Ah, looks like today may not be as bright as expected. You may want to take an umbrella.");
         songMood = 'https://soundcloud.com/samueljhunt/sets/rainyday';
         randomMaxValue = Math.floor((Math.random() * 11) + 1);
         getSounds();
     }
     else if (currentCondition === 'snow') {
-        $("requirementImage").html("<img id='theImg' src='jacket.png'  width='20%' height='20%'/>");
+        $("#requirementImage").html("<img id='theImg' src='./images/jacket.png'  width='20%' height='20%'/>");
         $("#requirementReason").html("Brr, it must be very cold outside. It also may/be snowing so prepare a jacket.");
         songMood = 'https://soundcloud.com/samueljhunt/sets/snow';
         randomMaxValue = Math.floor((Math.random() * 5) + 1);
         getSounds();
     }
     else if (currentCondition === 'sleet') {
-        $("requirementImage").html("<img id='theImg' src='jacket.png'  width='20%' height='20%'/>");
+        $("#requirementImage").html("<img id='theImg' src='./images/jacket.png'  width='20%' height='20%'/>");
         $("#requirementReason").html("Brr, it must be very cold outside. It also may/be snowing so prepare a jacket.");
         songMood = 'https://soundcloud.com/samueljhunt/sets/snow';
         randomMaxValue = Math.floor((Math.random() * 5) + 1);
         getSounds();
     }
     else if (currentCondition === 'wind') {
-        $("requirementImage").html("<img id='theImg' src='jacket.png'  width='20%' height='20%'/>");
+        $("#requirementImage").html("<img id='theImg' src='./images/jacket.png'  width='20%' height='20%'/>");
         $("#requirementReason").html("Hold on to your hat! It's looking a little windy out there. Snuggle up with some warm clothes too, it may be cold.");
         songMood = 'https://soundcloud.com/samueljhunt/sets/wind-1';
         randomMaxValue = Math.floor((Math.random() * 7) + 1);
         getSounds();
     }
     else if (currentCondition === 'fog') {
-        $("requirementImage").html("<img id='theImg' src='jacket.png'  width='20%' height='20%'/>");
+        $("#requirementImage").html("<img id='theImg' src='./images/jacket.png'  width='20%' height='20%'/>");
         $("#requirementReason").html("Can you see anything? I feel like the visibility has been reduced. Take care out there.");
         songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy';
         randomMaxValue = Math.floor((Math.random() * 11) + 1);
         getSounds();
     }
     else if (currentCondition === 'cloudy') {
-        $("requirementImage").html("<img id='theImg' src='sunscreen.png width='10%' height='10%'/>"); // make one for cloudy
+        $("#requirementImage").html("<img id='theImg' src='./images/sunscreen.png' width='10%' height='10%'/>"); // make one for cloudy
         $("#requirementReason").html("Well it looks like the clouds have come to say hello. Don't forget you can still get burnt.");
         songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy';
         randomMaxValue = Math.floor((Math.random() * 11) + 1);
@@ -191,8 +169,8 @@ function setWeatherConditions() {
         getSounds();
     }
     else if (currentCondition === 'partly-cloudy-night') {
-        $("requirementImage").html("<img id='theImg' src='sunscreen.png'   width='10%' height='10%'/>"); // also change this one
-        $("#requirementReason").html("It looks like the stars may be slightly obscured by the clouds tonight. Have a good night.");
+        $("#requirementImage").html("<img id='theImg' src='./images/night.png'   width='10%' height='10%'/>"); // also change this one
+        $("#requirementReason").html("It looks like the stars may be slightly obscured by the clouds tonight. You won't need too much (unless the temperature drops) Have a good night.");
         songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy-night';
         randomMaxValue = Math.floor((Math.random() * 7) + 1);
         getSounds();
