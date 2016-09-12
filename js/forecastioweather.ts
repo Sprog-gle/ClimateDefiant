@@ -45,19 +45,19 @@ function getLocation() {
 function showError(error) {
     switch (error.code) {
         case error.PERMISSION_DENIED:
-            x.innerHTML = "User denied the request for Geolocation."
+           // x.innerHTML = "User denied the request for Geolocation."
             manualLocation(); // Reverts to user's IP location (less accurate)
             break;
         case error.POSITION_UNAVAILABLE:
-            x.innerHTML = "Location information is unavailable. Using closest estimate."
+         //   x.innerHTML = "Location information is unavailable. Using closest estimate."
             manualLocation();
             break;
         case error.TIMEOUT:
-            x.innerHTML = "The request to get user location timed out."
+         //   x.innerHTML = "The request to get user location timed out."
             manualLocation();
             break;
         case error.UNKNOWN_ERROR:
-            x.innerHTML = "An unknown error occurred."
+         //   x.innerHTML = "An unknown error occurred."
             break;
     }
 }
