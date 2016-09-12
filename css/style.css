@@ -109,7 +109,7 @@ if it's not present, don't show loader */
 
 #addressBox {
     margin-top:60vh;
-    margin-left: 35%;
+    margin-left: 30vw;
   height: 500px;
   position: relative;
   width: 650px;

@@ -13,43 +13,39 @@
     <!-- load the weather icons -->
     <script src="./js/skycons.js"> </script>
 
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 
 <body>
 
-<div class="se-pre-con"> 
+    <div class="se-pre-con">
 
-<span id="loadingText"> Fetching your local Weather... </span>
- 
- <div id='addressBox'>
-        <div id='addressBox-inner'>
-  <input id='addressBox-input' type='text' placeholder='Enter your address'>
- <a class="production-wrap-jump-click"><div id='addressBox-link'><i class="fa fa-search" aria-hidden="true"></i></div></a>
+        <span id="loadingText"> Fetching your local Weather... </span>
 
-                </div>   
-        </div> 
-</div>
+        <div id='addressBox'>
+            <div id='addressBox-inner'>
+                <input id='addressBox-input' type='text' placeholder='Enter your address'>
+            </div>
+        </div>
+    </div>
 
 
     <div class="container" id="page-container">
         <h1 id="weather-title">
             <span id="climate"> Climate</span> <span id="defiant">Defiant</span>
         </h1>
-        <br>
-        <!-- NB: glyphicon halflings are generally not free, but the developer made them free in bootstrap -->
-        Current Time: <span id="localDate"> </span>
+        <br> Current Time: <span id="localDate"> </span>
         <hr> </hr>
         <h3> Are you weather ready? </h3>
         <div id="requirementImage">
             Loading Image...
-           <!-- <img src="/images/umbrella_test.png" width="20%" height="20%"> </img> -->
+
         </div>
 
         <div id="requirementReason">
             Loading...
-           <!-- You will probably need an umbrella today. According to the forecast it will probably rain, or at least threaten to rain. -->
         </div>
         <hr> </hr>
         <div class="currentForecast">
@@ -77,9 +73,9 @@
 
         <hr> </hr>
         <div class="Sound">
-<h3> Today Sounds Like: </h3>
+            <h3> Today Sounds Like: </h3>
 
-<span id="player"> </span>
+            <span id="player"> </span>
         </div>
 
         <!--
@@ -92,10 +88,6 @@
 -->
 
     </div>
-
-    
- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHYDYCMLuIUB34tOkfqz8NUdFlyRgHzLU&libraries=places&callback=initAutocomplete"
-        async defer></script>
     <!--jQuery Script-->
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <!--Bootstrap Script-->
@@ -105,6 +97,7 @@
     <script src="./js/forecastioweather.js"> </script>
     <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
     <script src="./js/loadingscreen.js"></script>
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHYDYCMLuIUB34tOkfqz8NUdFlyRgHzLU&libraries=places&callback=initAutocomplete" async defer></script>
 
 </body>
 
