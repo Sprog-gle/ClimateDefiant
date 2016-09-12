@@ -23,7 +23,7 @@ getLocation();
 // get location functions and error handling
 function getLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
         console.log("getLocation run");
     }
     else {
