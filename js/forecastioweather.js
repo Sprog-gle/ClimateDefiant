@@ -14,8 +14,8 @@ var summary;
 var randomMaxValue;
 var songMood;
 var randomGreeting, randomGreetingVal;
-var x = document.getElementById("location");
 randomGreetingGen();
+var x = document.getElementById("location");
 window.onload = function () {
     SC.initialize({
         client_id: "a8d5228ca716551510abb70e88c78d10",
@@ -213,7 +213,7 @@ function endLoading() {
     $(".se-pre-con").fadeOut("slow");
 }
 function randomGreetingGen() {
-    Math.floor((Math.random() * 9) + 1);
+    randomGreetingVal = Math.floor((Math.random() * 9) + 1);
     if (randomGreetingVal === 1) {
         randomGreeting = "loading page...";
     }

@@ -19,10 +19,11 @@ var songMood;
 
 var randomGreeting, randomGreetingVal;
 
+randomGreetingGen();
 
 var x = document.getElementById("location");
 
-randomGreetingGen();
+
 
 window.onload = function () {
     SC.initialize({
@@ -258,7 +259,7 @@ function endLoading() {
 }
 
 function randomGreetingGen() {
-Math.floor((Math.random() * 9) + 1);
+randomGreetingVal = Math.floor((Math.random() * 9) + 1);
 
 if (randomGreetingVal === 1){
 randomGreeting = "loading page..."
