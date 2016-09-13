@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Climate Defiant | Are you prepared?</title>
+    <!--Boostrap's CSS-->
+    <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!--Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+    <!-- Importing the custom fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
+    <!-- load the weather icons -->
+    <script src="../js/skycons.js"> </script>
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+    <div class="se-pre-con-load">
+        <span id="loadingText"> Loading Page... </span>
+         </div>
+
+
+    <div class="container" id="page-container">
+        <h1 id="weather-title">
+            <span id="climate"> Climate</span> <span id="defiant">Defiant</span>
+        </h1>
+        <br> Current Time: <span id="localDate"> </span> 
+        <hr> </hr>
+       
+
+ Welcome to my web app, named Climate Defiant. Let's begin by running through a user story of the purpose of this app. 
+ <br><br>
+
+ <div id="about">
+ Imagine you are running late and don't have time to go and check the weather, or you are just so out of it that you can't think and make sense of what the
+ weather conditions mean. Now, you want to know exactly what you need without putting any thought into it (because we're big on making life easier these days). 
+ Now you can just open the app from your bookmarks on your home page, or (in the future the app) and see exactly what you will need clearly shown through an image.
+ Along with the image is a sentence also reflecting what you should take. 
+ <br>
+ Now for those with a bit more time, you can scroll down to see what the conditions actually are right now. A cool little addition.
+ <br>
+ There is also a section aptly titled "Today sounds like". This section is supposed to reflect the mood of the weather through music, so for those who want some tunes
+ to get ready to in the morning, or who are unable to see the image then they can listen to the mood of the weather. 
+ <br> 
+</div>
+
+ <h3> Future plans: </h3>
+ <div id="about">
+Now there are many future plans for this site, and small adjustments that I need to make which will be incorperated over the next coming months (possibly even closer). 
+
+These include:
+
+<ol>
+<li> add severe weather alerts - use nearest storm distane to choose whether to notify user </li>
+<li> day specific songs/alerts e.g sunday morning rain is falling (sunday, rain conditions)</li>
+<li> create phone app</li>
+<li> add api call to select max number of tracks in a playlist instead of hardcoding it.</li>
+<li> add ability to also check temp as a clear day is not always hot etc.</li>
+<li> add min and max temps for the day</li>
+<li> improve accuracy with a few slight additions / extra data taken into account</li>
+<li> change out the soundcloud widget to suit the page theme (minimilistic/grey) Probably add own html player.</li>
+<li> Add sweet alerts for the sever weather</li>
+</ol>
+     </div>
+
+        </div>
+
+     
+
+
+   
+    
+</body>
+ <!--jQuery Script-->
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <!--Bootstrap Script-->
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--Custom Script-->
+    <script src="../js/time.js"> </script>
+     <script src="../js/loadpages.js"> </script> 
+    <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
+     
+</html>
