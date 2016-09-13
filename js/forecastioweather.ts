@@ -132,8 +132,8 @@ function getWeather() {
 
             // Change HTML elements to reflect weather
             $("#currentCondDesc").html(summary);
-            $("#temp").html("The temperature is currently " + currentTemp + "&deg;C");
-            $("#feelsLike").html("It currently feels like it is " + feelsLike + "&deg;C"); // add option to change later.
+            $("#temp").html("The temperature is " + currentTemp + "&deg;c");
+            $("#feelsLike").html("It feels like " + feelsLike + "&deg;c outside"); // add option to change later.
             $("#windSpeed").html("Winds are currently peaking at: " + windSpeed + " KM/h");
             $("#humidity").html("Humidity is currently: " + humidity + "%");
            
