@@ -1,14 +1,15 @@
 {
-  
-  "name": "omnisearch",
+  "name": "ClimateDefiant",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "dependencies": {
-  "bootstrap": "^3.3.7",
-  "jquery": "^3.1.0"
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
