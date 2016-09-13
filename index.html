@@ -10,6 +10,7 @@
     Try it out! " />
     <meta property="og:image" content="https://climatedefiant.azurewebsites.net/images/fbcover.png" />
 
+<link href="./images/favicon.ico" rel="icon" type="image/x-icon" />
     
     <title>Climate Defiant | Are you prepared?</title>
     <!--Boostrap's CSS-->
@@ -21,13 +22,13 @@
     <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
     <!-- load the weather icons -->
     <script src="./js/skycons.js"> </script>
-
+<link href="https://fonts.googleapis.com/css?family=Lato|Modak" rel="stylesheet">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
 
-
+<!-- load facebooks goodies -->
     <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -36,6 +37,24 @@
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- load twitters goodies :)  -->
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+ 
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+ 
+  return t;
+}(document, "script", "twitter-wjs"));</script>
 
 
 </head>
@@ -56,7 +75,7 @@
         </h1>
         <br> Current Time: <span id="localDate"> </span> 
         <hr> </hr>
-        <h3> Are you weather ready? </h3>
+        <h2> Are you weather ready? </h2>
         <div id="requirementImage">
             Loading Image...
 
@@ -70,7 +89,7 @@
 
         <hr> </hr>
         <div class="currentForecast">
-            <h3> Current Conditions: </h3>
+            <h2> Current Conditions: </h2>
 
             <div class="containerCurrent">
                 <br>
@@ -86,6 +105,7 @@
                     <span id="windSpeed">  Loading...</span><br>
                     <span id="humidity"> Loading... </span><br>
                     <br>
+                    <div id="tweet-current"></div>
                 </div>
 
             </div>
@@ -94,7 +114,7 @@
 
         <hr> </hr>
         <div class="Sound">
-            <h3> Today Sounds Like: </h3>
+            <h2> Today Sounds Like: </h2>
 
             <span id="player"> </span>
         </div>
@@ -110,10 +130,10 @@
 
 <hr> </hr>
         
-        <div class="fb-share-button" data-href="https://climatedefiant.azurewebsites.net/" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fclimatedefiant.azurewebsites.net%2F&amp;src=sdkpreparse">Share</a></div>
+        <div class="fb-share-button" data-href="https://climatedefiant.azurewebsites.net/" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fclimatedefiant.azurewebsites.net%2F&amp;src=sdkpreparse">Share</a></div> <br> <span id="tweet-share"> </span>
         <br>
 
-<footer> <a href="#"> Home </a> | <a href="/about/"> About </a> |<a href="/contact/"> Contact </a> <br><br> <a href="http://msa.ms/"> MSA Submission </a> <br> Climate Defiant &copy; Samuel Hunt 2016 <br>   </footer>
+<footer> <a href="#"> Home </a> | <a href="/about/"> About </a> <br><br> <a href="http://msa.ms/"> MSA Submission </a> <br> Climate Defiant &copy; Samuel Hunt 2016 <br>   </footer>
 <br>
     </div>
    
