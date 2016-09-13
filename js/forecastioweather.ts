@@ -28,8 +28,6 @@ window.onload = function () {
     
 }
 
-
-
 // calls the get location function
 getLocation();
 

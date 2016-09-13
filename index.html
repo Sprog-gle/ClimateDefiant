@@ -16,6 +16,16 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
 </head>
 
 <body>
@@ -43,6 +53,9 @@
         <div id="requirementReason">
             Loading...
         </div>
+        <div class="fb-send" data-href="https://climatedefiant.azurewebsites.net/"></div>
+
+
         <hr> </hr>
         <div class="currentForecast">
             <h3> Current Conditions: </h3>
@@ -84,6 +97,9 @@
 -->
 
 <hr> </hr>
+        
+        <div class="fb-share-button" data-href="https://climatedefiant.azurewebsites.net/" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fclimatedefiant.azurewebsites.net%2F&amp;src=sdkpreparse">Share</a></div>
+        <br>
 
 <footer> <a href="#"> Home </a> | <a href="/about/"> About </a> |<a href="/contact/"> Contact </a> <br><br> <a href="http://msa.ms/"> MSA Submission </a> <br> Climate Defiant &copy; Samuel Hunt 2016 <br>   </footer>
 <br>
