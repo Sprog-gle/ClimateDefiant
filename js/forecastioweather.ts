@@ -101,8 +101,6 @@ $.ajax({
 }
 
 
-
-
 // using the geolocation information with forecast.io
 
 function getWeather() {
