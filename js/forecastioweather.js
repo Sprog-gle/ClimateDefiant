@@ -15,7 +15,7 @@ var randomMaxValue;
 var songMood;
 var randomGreeting, randomGreetingVal;
 var x = document.getElementById("location");
-randomGreeting();
+randomGreetingVal();
 window.onload = function () {
     SC.initialize({
         client_id: "a8d5228ca716551510abb70e88c78d10",

@@ -22,7 +22,7 @@ var randomGreeting, randomGreetingVal;
 
 var x = document.getElementById("location");
 
-randomGreeting();
+randomGreetingVal();
 
 window.onload = function () {
     SC.initialize({
