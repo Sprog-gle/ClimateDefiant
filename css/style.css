@@ -111,3 +111,6 @@ display:block;
 #about{
     text-align: justify;
 }
+#greeting{
+    padding-left: 2%;
+}
