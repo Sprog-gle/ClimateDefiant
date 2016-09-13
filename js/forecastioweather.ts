@@ -81,17 +81,34 @@ function showError(error) {
 function manualLocation() {
 console.log("manloc");
     $("#loadingText").html("Sorry, we couldn't detect your location. Please type your location in the box below.");
-   document.getElementById('search').style.display = 'flex';
-}
+
 
 // if the html5 location services do not work
-// haven't added it to do anything else after this yet'
 
 
-// using the geolocation information with accuweather
+ $.ajax({
+     'url' : 'https://freegeoip.net/json/?callback=?',
+     'async': false,
+     'dataType': "json",
+     'success': function(data){
+         ipaddr = data.ip;
+        iplocation = data.city;
+         console.log(ipaddr);
+        return ipaddr, iplocation;
+
+     }
+ });
+
+ if (ipaddr !== undefined) {
+    // take ip and put it into the api call for weather data
+    console.log(ipaddr);
+    console.log(iplocation);
+
+}
 
 
 
+// using the geolocation information with forecast.io
 
 function getWeather() {
     console.log("get weather run");

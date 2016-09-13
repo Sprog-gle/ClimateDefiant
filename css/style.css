@@ -19,7 +19,6 @@ opacity: 0.4;
 }
 
 
-
 h1#weather-title {
 
 	text-align: center;
@@ -120,9 +119,8 @@ if it's not present, don't show loader */
 }
 
 #search{
-    height: 150%;
+height: 150%;
   width: 100%;
-  display: none;
   position: fixed;
   align-items: center;
   justify-content: center;
