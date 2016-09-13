@@ -2,105 +2,114 @@
 <html>
 
 <head>
-        <!-- tags for facebook integration -->
+
+    <!-- Meta Tags -->
+    <!-- tags for facebook integration -->
     <meta property="og:url" content="https://climatedefiant.azurewebsites.net" />
     <meta property="og:title" content="Climate Defiant - Save time preparing in tune with the weather gods!" />
     <meta property="og:description" content="Be smart, save time, don't get caught in the rain. Simple. " />
     <meta property="og:image" content="https://climatedefiant.azurewebsites.net/images/fbcover.png" />
 
-    <!-- Twitter Card data -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@isamjhunt">
-<meta name="twitter:title" content="Climate Defiant | Are you prepared?">
-<meta name="twitter:description" content="Be smart, save time, don't get caught in the rain. Simple.' ">
-<meta name="twitter:creator" content="@isamjhunt">
-<!-- Twitter summary card with large image must be at least 280x150px -->
-<meta name="twitter:image:src" content="https://climatedefiant.azurewebsites.net/images/fbcover.png">
-
-<meta name="description" content="Be smart, save time, don't get caught in the rain. Simple." />
-
-<link href="./images/favicon.ico" rel="icon" type="image/x-icon" />
-    
+    <!-- Twitter/General Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@isamjhunt">
+    <meta name="twitter:title" content="Climate Defiant | Are you prepared?">
+    <meta name="twitter:description" content="Be smart, save time, don't get caught in the rain. Simple.' ">
+    <meta name="twitter:creator" content="@isamjhunt">
+    <meta name="twitter:image:src" content="https://climatedefiant.azurewebsites.net/images/fbcover.png">
+    <meta name="description" content="Be smart, save time, don't get caught in the rain. Simple." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Climate Defiant | Are you prepared?</title>
+
+    <!-- Linking relative files -->
+    <!-- favicon -->
+    <link href="./images/favicon.ico" rel="icon" type="image/x-icon" />
+
     <!--Boostrap's CSS-->
     <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+
     <!--Custom CSS-->
     <link rel="stylesheet" type="text/css" href="./css/style.css">
 
     <!-- Importing the custom fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato|Modak|Bitter" rel="stylesheet">
+
     <!-- load the weather icons -->
     <script src="./js/skycons.js"> </script>
 
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
-<!-- load facebooks goodies -->
+    <!-- load facebooks goodies -->
     <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+    <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 
-<!-- load twitters goodies :)  -->
-<script>window.twttr = (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-  if (d.getElementById(id)) return t;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://platform.twitter.com/widgets.js";
-  fjs.parentNode.insertBefore(js, fjs);
+    <!-- load twitters goodies :)  -->
+    <script>window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+    
+    t._e = [];
+    t.ready = function(f) {
+        t._e.push(f);
+    };
  
-  t._e = [];
-  t.ready = function(f) {
-    t._e.push(f);
-  };
- 
-  return t;
-}(document, "script", "twitter-wjs"));</script>
+    return t;
+    }(document, "script", "twitter-wjs"));</script>
 
 
 </head>
 
 <body>
 
+<!-- loading screen -->
     <div class="se-pre-con">
         <span id="loadingText"> Fetching your local Weather... </span>
-        <div class ="test">
- </span>
-              </div>
-         </div>
+        <div class="test">
+            </span>
+        </div>
+    </div>
 
-
+<!-- title area -->
     <div class="container" id="page-container">
         <h1 id="weather-title">
             <span id="climate"> Climate</span> <span id="defiant">Defiant</span>
         </h1>
-        <br> Current Time: <span id="localDate"> </span> 
+        <br> Current Time: <span id="localDate"> </span>
+
+      
         <hr> </hr>
+        
+  <!-- Requirements area -->
         <h2> Are you weather ready? </h2>
         <div id="requirementImage">
             Loading Image...
-
-        </div>
+     </div>
 
         <div id="requirementReason">
             Loading...
         </div>
+
+        <!-- add Messenger chat button -->
         <div class="fb-send" data-href="https://climatedefiant.azurewebsites.net/"></div>
 
 
         <hr> </hr>
+
+        <!-- current weather zone -->
         <div class="currentForecast">
             <h2> Current Conditions: </h2>
 
             <div class="containerCurrent">
+               
                 <br>
 
                 <div id="currentIcon">
@@ -122,42 +131,36 @@
 
 
         <hr> </hr>
+
+        <!-- mood zone -->
         <div class="Sound">
             <h2> Today Sounds Like: </h2>
 
             <span id="player"> </span>
         </div>
 
-        <!--
-          
-            <p id="data"></p>
-            <p id="location"></p>
-            <p id="ipaddress"></p>
-            <div id='weather'> </div>
-            <div id="citylocation"> </div>
--->
+        <hr> </hr>
 
-<hr> </hr>
-        
-        <div class="fb-share-button" data-href="https://climatedefiant.azurewebsites.net/" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fclimatedefiant.azurewebsites.net%2F&amp;src=sdkpreparse">Share</a></div> <br> <span id="tweet-share"> </span>
+<!-- footer stuff -->
+        <div class="fb-share-button" data-href="https://climatedefiant.azurewebsites.net/" data-layout="button" data-size="large"
+            data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fclimatedefiant.azurewebsites.net%2F&amp;src=sdkpreparse">Share</a></div>
+        <br> <span id="tweet-share"> </span>
         <br>
 
-<footer> <a href="#"> Home </a> | <a href="/about/"> About </a> <br><br> <a href="http://msa.ms/"> MSA Submission </a> <br> Climate Defiant &copy; Samuel Hunt 2016 <br>   </footer>
-<br>
-    </div>
-   
-    
+        <footer> <a href="#"> Home </a> | <a href="/about/"> About </a> <br><br> <a href="http://msa.ms/"> MSA Submission </a> <br>            Climate Defiant &copy; Samuel Hunt 2016 <br> </footer>
+      
+        <br>
+</div>
+
+
 </body>
- <!--jQuery Script-->
-    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
-    <!--Bootstrap Script-->
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!--Custom Script-->
-    <script src="./js/time.js"> </script>
-    <script src="./js/forecastioweather.js"> </script>
-    <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
-
-
-
-     
+<!-- extra scripts / longer loading scripts -->
+<!--jQuery Script-->
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+<!--Bootstrap Script-->
+<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<!--Custom Script-->
+<script src="./js/time.js"> </script>
+<script src="./js/forecastioweather.js"> </script>
+<script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
 </html>
