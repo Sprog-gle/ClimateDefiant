@@ -9,13 +9,23 @@
     <link rel="stylesheet" type="text/css" href="../css/style.css">
 
     <!-- Importing the custom fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Modak|Bitter" rel="stylesheet">
     <!-- load the weather icons -->
     <script src="../js/skycons.js"> </script>
-<link href="https://fonts.googleapis.com/css?family=Lato|Modak" rel="stylesheet">
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 
 </head>
 
@@ -42,7 +52,7 @@
  weather conditions mean. Now, you want to know exactly what you need without putting any thought into it (because we're big on making life easier these days). 
  Now you can just open the app from your bookmarks on your home page, or (in the future the app) and see exactly what you will need clearly shown through an image.
  Along with the image is a sentence also reflecting what you should take. 
- <br>
+ <br><br>
  Now for those with a bit more time, you can scroll down to see what the conditions actually are right now. A cool little addition.
  <br>
  There is also a section aptly titled "Today sounds like". This section is supposed to reflect the mood of the weather through music, so for those who want some tunes
@@ -69,16 +79,16 @@ These include:
 <li> Add/Create a more personalised UI which looks a lot nicer.</li>
 </ol>
 
-
      </div>
 
-    
-
-        </div>
+    <br>
+    <div class="fb-comments" data-href="https://climatedefiant.azurewebsites.net" data-numposts="5"></div>
 
      
-
-    
+<hr> </hr>
+     
+<footer> <a href="#"> Home </a> | <a href="/about/"> About </a> <br><br> <a href="http://msa.ms/"> MSA Submission </a> <br> Climate Defiant &copy; Samuel Hunt 2016 <br>   </footer>
+       </div>
 </body>
  <!--jQuery Script-->
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
