@@ -20,34 +20,6 @@ window.onload = function () {
     SC.initialize({
         client_id: "a8d5228ca716551510abb70e88c78d10",
     });
-    if (randomGreetingVal === 1) {
-        randomGreeting = "loading page...";
-    }
-    else if (randomGreetingVal === 2) {
-        randomGreeting = "Watching the news...";
-    }
-    else if (randomGreetingVal === 3) {
-        randomGreeting = "Googling for weather...";
-    }
-    else if (randomGreetingVal === 4) {
-        randomGreeting = "Chasing the sun...";
-    }
-    else if (randomGreetingVal === 5) {
-        randomGreeting = "Finding the remote...";
-    }
-    else if (randomGreetingVal === 6) {
-        randomGreeting = "Downloading the internet...";
-    }
-    else if (randomGreetingVal === 7) {
-        randomGreeting = "Locating the anchorman...";
-    }
-    else if (randomGreetingVal === 8) {
-        randomGreeting = "Changing the channel...";
-    }
-    else if (randomGreetingVal === 9) {
-        randomGreeting = "Looking outside...";
-    }
-    $("loadingText").html(randomGreeting);
 };
 // calls the get location function
 getLocation();
@@ -242,5 +214,32 @@ function endLoading() {
 }
 function randomGreetingGen() {
     Math.floor((Math.random() * 9) + 1);
-    return randomGreetingVal;
+    if (randomGreetingVal === 1) {
+        randomGreeting = "loading page...";
+    }
+    else if (randomGreetingVal === 2) {
+        randomGreeting = "Watching the news...";
+    }
+    else if (randomGreetingVal === 3) {
+        randomGreeting = "Googling for weather...";
+    }
+    else if (randomGreetingVal === 4) {
+        randomGreeting = "Chasing the sun...";
+    }
+    else if (randomGreetingVal === 5) {
+        randomGreeting = "Finding the remote...";
+    }
+    else if (randomGreetingVal === 6) {
+        randomGreeting = "Downloading the internet...";
+    }
+    else if (randomGreetingVal === 7) {
+        randomGreeting = "Locating the anchorman...";
+    }
+    else if (randomGreetingVal === 8) {
+        randomGreeting = "Changing the channel...";
+    }
+    else if (randomGreetingVal === 9) {
+        randomGreeting = "Looking outside...";
+    }
+    $("loadingText").html(randomGreeting);
 }
