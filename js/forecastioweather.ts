@@ -277,6 +277,6 @@ function endLoading() {
 }
 
 function randomGreetingval() {
-Math.floor((Math.random() * 10) + 1);
-return randomLoading;
+Math.floor((Math.random() * 9) + 1);
+return randomGreetingVal;
 }

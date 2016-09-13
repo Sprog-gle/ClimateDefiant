@@ -1,5 +1,5 @@
 {
-  "name": "ClimateDefiant",
+  "name": "climatedefiant",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,6 @@
     "jquery": "^3.1.0"
   },
   "devDependencies": {
-    "gulp": "^3.9.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
