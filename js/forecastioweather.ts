@@ -279,5 +279,5 @@ randomGreeting = "Changing the channel..."
 }else if (randomGreetingVal === 9){
 randomGreeting = "Looking outside..."
 }
-    $("loadingText").html(randomGreeting);
+    $("#loadingText").html(randomGreeting);
 }
