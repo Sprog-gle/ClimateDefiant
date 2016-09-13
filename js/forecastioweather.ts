@@ -57,54 +57,49 @@ function showPosition(position) {
 function showError(error) {
     switch (error.code) {
         case error.PERMISSION_DENIED:
-           // x.innerHTML = "User denied the request for Geolocation."
-            manualLocation(); // Reverts to user's IP location (less accurate)
+            getIPLocation(); // Reverts to user's IP location (less accurate)
             console.log("test");
             break;
         case error.POSITION_UNAVAILABLE:
          //   x.innerHTML = "Location information is unavailable. Using closest estimate."
-            manualLocation();
+            getIPLocation();
             break;
         case error.TIMEOUT:
          //   x.innerHTML = "The request to get user location timed out."
-            manualLocation();
+            getIPLocation();
             break;
         case error.UNKNOWN_ERROR:
          //   x.innerHTML = "An unknown error occurred."
-         manualLocation();
+         getIPLocation();
          console.log("error");
             break;
     }
 }
 
 
-function manualLocation() {
+function getIPLocation() {
 console.log("manloc");
-    $("#loadingText").html("Sorry, we couldn't detect your location. Please type your location in the box below.");
+    $("#loadingText").html("Sorry, we have had difficulty locating you. Reverting to less accurate location.");
 
 
-// if the html5 location services do not work
-
-
- $.ajax({
-     'url' : 'https://freegeoip.net/json/?callback=?',
-     'async': false,
-     'dataType': "json",
-     'success': function(data){
-         ipaddr = data.ip;
+$.ajax({
+    'url' : 'https://freegeoip.net/json/?callback=?',
+   // 'async': false,
+    'dataType': "json",
+    'success': function(data){
+        ipaddr = data.ip;
         iplocation = data.city;
-         console.log(ipaddr);
-        return ipaddr, iplocation;
-
-     }
- });
-
- if (ipaddr !== undefined) {
-    // take ip and put it into the api call for weather data
-    console.log(ipaddr);
-    console.log(iplocation);
-
+        lat = data.latitude;
+        long = data.longitude;
+        console.log(ipaddr);
+        console.log(iplocation);
+        console.log("Obtained IP/Location");
+        getWeather();
+    }  
+    
+})
 }
+
 
 
 
