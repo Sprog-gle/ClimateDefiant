@@ -119,7 +119,7 @@ function setWeatherConditions() {
         getSounds();
     }
     else if (currentCondition === 'clear-night') {
-        $("#requirementImage").html("<img id='theImg' src='./images/night.png'   width='15%' height='15%'/>"); // make icon for night
+        $("#requirementImage").html("<img id='theImg' src='./images/night.png'   width='15%' height='15%'/>");
         $("#requirementReason").html("It looks like tonight is going to be a beautiful one, look up and count the stars. Have a good night.");
         req = "a good night sleep";
         songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy-night';
@@ -167,7 +167,7 @@ function setWeatherConditions() {
         getSounds();
     }
     else if (currentCondition === 'cloudy') {
-        $("#requirementImage").html("<img id='theImg' src='./images/sunscreen.png' width='10%' height='10%'/>"); // make one for cloudy
+        $("#requirementImage").html("<img id='theImg' src='./images/sunscreen.png' width='10%' height='10%'/>");
         $("#requirementReason").html("Well it looks like the clouds have come to say hello. Don't forget you can still get burnt.");
         req = "Sunscreen possibly today";
         songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy';
@@ -183,7 +183,7 @@ function setWeatherConditions() {
         getSounds();
     }
     else if (currentCondition === 'partly-cloudy-night') {
-        $("#requirementImage").html("<img id='theImg' src='./images/night.png'   width='15%' height='15%'/>"); // also change this one
+        $("#requirementImage").html("<img id='theImg' src='./images/night.png'   width='15%' height='15%'/>");
         $("#requirementReason").html("It looks like the stars may be slightly obscured by the clouds tonight. You won't need too much (unless the temperature drops) Have a good night.");
         req = "a good night sleep";
         songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy-night';
@@ -201,7 +201,7 @@ function getSounds() {
 function setTweet() {
     // current tweet    
     twttr.widgets.createShareButton('https://climatedefiant.azurewebsites.net/', document.getElementById('tweet-current'), {
-        text: "It looks like I may need " + req + ". The temp is " + currentTemp + "°, it's " + summary + ". I'm being #ClimateDefiant"
+        text: "It looks like I may need " + req + ". The temp is " + currentTemp + "\xB0, it's " + summary + ". I'm being #ClimateDefiant"
     });
     // share tweet
     twttr.widgets.createShareButton('https://climatedefiant.azurewebsites.net/', document.getElementById('tweet-share'), {
