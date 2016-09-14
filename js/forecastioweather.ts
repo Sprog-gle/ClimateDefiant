@@ -12,6 +12,7 @@ var humidity;
 var windSpeed;
 var req;
 var summary;
+var todaytonight;
 
 var randomMaxValue;
 
@@ -158,6 +159,7 @@ function setWeatherConditions() {
         req = "sunscreen today";
         songMood = 'https://soundcloud.com/samueljhunt/sets/sunnyday';
         randomMaxValue = Math.floor((Math.random() * 14) + 1);
+        $("#todaytonight").html("Today sounds like:");
         setTweet();
         getSounds();
     } else if (currentCondition === 'clear-night') {
@@ -166,6 +168,7 @@ function setWeatherConditions() {
         req = "a good night sleep";
         songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy-night';
         randomMaxValue = Math.floor((Math.random() * 7) + 1);
+        $("#todaytonight").html("Tonight sounds like:");
         setTweet();
         getSounds();
     } else if (currentCondition === 'rain') {
@@ -174,6 +177,7 @@ function setWeatherConditions() {
         req = "an umbrella today";
         songMood = 'https://soundcloud.com/samueljhunt/sets/rainyday';
         randomMaxValue = Math.floor((Math.random() * 11) + 1);
+        $("#todaytonight").html("Today sounds like:");
         setTweet();
         getSounds();
     } else if (currentCondition === 'snow') {
@@ -182,6 +186,7 @@ function setWeatherConditions() {
         req = "a jacket (or two) today";
         songMood = 'https://soundcloud.com/samueljhunt/sets/snow';
         randomMaxValue = Math.floor((Math.random() * 5) + 1);
+        $("#todaytonight").html("Today sounds like:");
         setTweet();
         getSounds();
     } else if (currentCondition === 'sleet') {
@@ -190,6 +195,7 @@ function setWeatherConditions() {
         req = "a jacket (or two) today";
         songMood = 'https://soundcloud.com/samueljhunt/sets/snow';
         randomMaxValue = Math.floor((Math.random() * 5) + 1);
+        $("#todaytonight").html("Today sounds like:");
         setTweet();
         getSounds();
     } else if (currentCondition === 'wind') {
@@ -198,6 +204,7 @@ function setWeatherConditions() {
         req = "some warm clothes today";
         songMood = 'https://soundcloud.com/samueljhunt/sets/wind-1';
         randomMaxValue = Math.floor((Math.random() * 7) + 1);
+        $("#todaytonight").html("Today sounds like:");
         setTweet();
         getSounds();
     } else if (currentCondition === 'fog') {
@@ -206,6 +213,7 @@ function setWeatherConditions() {
         req = "to be careful right now";
         songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy';
         randomMaxValue = Math.floor((Math.random() * 11) + 1);
+        $("#todaytonight").html("Today sounds like:");
         setTweet();
         getSounds();
     } else if (currentCondition === 'cloudy') {
@@ -214,6 +222,7 @@ function setWeatherConditions() {
         req = "Sunscreen possibly today";
         songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy';
         randomMaxValue = Math.floor((Math.random() * 11) + 1);
+        $("#todaytonight").html("Today sounds like:");
         setTweet();
         getSounds();
     } else if (currentCondition === 'partly-cloudy-day') {
@@ -222,6 +231,7 @@ function setWeatherConditions() {
         req = "Sunscreen possibly today";
         songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy';
         randomMaxValue = Math.floor((Math.random() * 11) + 1);
+        $("#todaytonight").html("Today sounds like:");
         setTweet();
         getSounds();
     } else if (currentCondition === 'partly-cloudy-night') {
@@ -230,6 +240,7 @@ function setWeatherConditions() {
         req = "a good night sleep";
         songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy-night';
         randomMaxValue = Math.floor((Math.random() * 7) + 1);
+        $("#todaytonight").html("Tonight sounds like:");
         setTweet();
         getSounds();
     }
