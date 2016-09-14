@@ -14,9 +14,9 @@ var summary;
 var randomMaxValue;
 var songMood;
 var randomGreeting, randomGreetingVal;
-//if (location.protocol === 'http:') {
-//   window.location.replace("https://climatedefiant.azurewebsites.net");
-//}
+if (location.protocol === 'http:') {
+    window.location.replace("https://climatedefiant.azurewebsites.net");
+}
 randomGreetingGen();
 var x = document.getElementById("location");
 window.onload = function () {
@@ -119,6 +119,7 @@ function setWeatherConditions() {
         req = "sunscreen today";
         songMood = 'https://soundcloud.com/samueljhunt/sets/sunnyday';
         randomMaxValue = Math.floor((Math.random() * 14) + 1);
+        setTweet();
         getSounds();
     }
     else if (currentCondition === 'clear-night') {
@@ -127,6 +128,7 @@ function setWeatherConditions() {
         req = "a good night sleep";
         songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy-night';
         randomMaxValue = Math.floor((Math.random() * 7) + 1);
+        setTweet();
         getSounds();
     }
     else if (currentCondition === 'rain') {
@@ -135,6 +137,7 @@ function setWeatherConditions() {
         req = "an umbrella today";
         songMood = 'https://soundcloud.com/samueljhunt/sets/rainyday';
         randomMaxValue = Math.floor((Math.random() * 11) + 1);
+        setTweet();
         getSounds();
     }
     else if (currentCondition === 'snow') {
@@ -143,6 +146,7 @@ function setWeatherConditions() {
         req = "a jacket (or two) today";
         songMood = 'https://soundcloud.com/samueljhunt/sets/snow';
         randomMaxValue = Math.floor((Math.random() * 5) + 1);
+        setTweet();
         getSounds();
     }
     else if (currentCondition === 'sleet') {
@@ -151,6 +155,7 @@ function setWeatherConditions() {
         req = "a jacket (or two) today";
         songMood = 'https://soundcloud.com/samueljhunt/sets/snow';
         randomMaxValue = Math.floor((Math.random() * 5) + 1);
+        setTweet();
         getSounds();
     }
     else if (currentCondition === 'wind') {
@@ -159,6 +164,7 @@ function setWeatherConditions() {
         req = "some warm clothes today";
         songMood = 'https://soundcloud.com/samueljhunt/sets/wind-1';
         randomMaxValue = Math.floor((Math.random() * 7) + 1);
+        setTweet();
         getSounds();
     }
     else if (currentCondition === 'fog') {
@@ -167,6 +173,7 @@ function setWeatherConditions() {
         req = "to be careful right now";
         songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy';
         randomMaxValue = Math.floor((Math.random() * 11) + 1);
+        setTweet();
         getSounds();
     }
     else if (currentCondition === 'cloudy') {
@@ -175,6 +182,7 @@ function setWeatherConditions() {
         req = "Sunscreen possibly today";
         songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy';
         randomMaxValue = Math.floor((Math.random() * 11) + 1);
+        setTweet();
         getSounds();
     }
     else if (currentCondition === 'partly-cloudy-day') {
@@ -183,6 +191,7 @@ function setWeatherConditions() {
         req = "Sunscreen possibly today";
         songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy';
         randomMaxValue = Math.floor((Math.random() * 11) + 1);
+        setTweet();
         getSounds();
     }
     else if (currentCondition === 'partly-cloudy-night') {
@@ -202,6 +211,7 @@ function getSounds() {
     });
 }
 function setTweet() {
+    console.log('settweet');
     // current tweet    
     twttr.widgets.createShareButton('https://climatedefiant.azurewebsites.net/', document.getElementById('tweet-current'), {
         text: "It looks like I may need " + req + ". The temp is " + currentTemp + "\xB0, it's " + summary + ". I'm being #ClimateDefiant"

@@ -19,9 +19,9 @@ var songMood;
 
 var randomGreeting, randomGreetingVal;
 
-//if (location.protocol === 'http:') {
- //   window.location.replace("https://climatedefiant.azurewebsites.net");
-//}
+if (location.protocol === 'http:') {
+    window.location.replace("https://climatedefiant.azurewebsites.net");
+}
 
 randomGreetingGen();
 
@@ -158,6 +158,7 @@ function setWeatherConditions() {
         req = "sunscreen today";
         songMood = 'https://soundcloud.com/samueljhunt/sets/sunnyday';
         randomMaxValue = Math.floor((Math.random() * 14) + 1);
+        setTweet();
         getSounds();
     } else if (currentCondition === 'clear-night') {
         $("#requirementImage").html("<img id='theImg' src='./images/night.png'   width='15%' height='15%'/>");
@@ -165,6 +166,7 @@ function setWeatherConditions() {
         req = "a good night sleep";
         songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy-night';
         randomMaxValue = Math.floor((Math.random() * 7) + 1);
+        setTweet();
         getSounds();
     } else if (currentCondition === 'rain') {
         $("#requirementImage").html("<img id='theImg' src='./images/umbrella.png'  width='20%' height='20%'/>");
@@ -172,6 +174,7 @@ function setWeatherConditions() {
         req = "an umbrella today";
         songMood = 'https://soundcloud.com/samueljhunt/sets/rainyday';
         randomMaxValue = Math.floor((Math.random() * 11) + 1);
+        setTweet();
         getSounds();
     } else if (currentCondition === 'snow') {
         $("#requirementImage").html("<img id='theImg' src='./images/jacket.png'  width='20%' height='20%'/>");
@@ -179,6 +182,7 @@ function setWeatherConditions() {
         req = "a jacket (or two) today";
         songMood = 'https://soundcloud.com/samueljhunt/sets/snow';
         randomMaxValue = Math.floor((Math.random() * 5) + 1);
+        setTweet();
         getSounds();
     } else if (currentCondition === 'sleet') {
         $("#requirementImage").html("<img id='theImg' src='./images/jacket.png'  width='20%' height='20%'/>");
@@ -186,6 +190,7 @@ function setWeatherConditions() {
         req = "a jacket (or two) today";
         songMood = 'https://soundcloud.com/samueljhunt/sets/snow';
         randomMaxValue = Math.floor((Math.random() * 5) + 1);
+        setTweet();
         getSounds();
     } else if (currentCondition === 'wind') {
         $("#requirementImage").html("<img id='theImg' src='./images/jacket.png'  width='20%' height='20%'/>");
@@ -193,6 +198,7 @@ function setWeatherConditions() {
         req = "some warm clothes today";
         songMood = 'https://soundcloud.com/samueljhunt/sets/wind-1';
         randomMaxValue = Math.floor((Math.random() * 7) + 1);
+        setTweet();
         getSounds();
     } else if (currentCondition === 'fog') {
         $("#requirementImage").html("<img id='theImg' src='./images/jacket.png'  width='20%' height='20%'/>");
@@ -200,6 +206,7 @@ function setWeatherConditions() {
         req = "to be careful right now";
         songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy';
         randomMaxValue = Math.floor((Math.random() * 11) + 1);
+        setTweet();
         getSounds();
     } else if (currentCondition === 'cloudy') {
         $("#requirementImage").html("<img id='theImg' src='./images/sunscreen.png' width='10%' height='10%'/>"); 
@@ -207,6 +214,7 @@ function setWeatherConditions() {
         req = "Sunscreen possibly today";
         songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy';
         randomMaxValue = Math.floor((Math.random() * 11) + 1);
+        setTweet();
         getSounds();
     } else if (currentCondition === 'partly-cloudy-day') {
         $("#requirementImage").html("<img id='theImg' src='./images/sunscreen.png'  width='15%' height='15%'/>");
@@ -214,6 +222,7 @@ function setWeatherConditions() {
         req = "Sunscreen possibly today";
         songMood = 'https://soundcloud.com/samueljhunt/sets/cloudy';
         randomMaxValue = Math.floor((Math.random() * 11) + 1);
+        setTweet();
         getSounds();
     } else if (currentCondition === 'partly-cloudy-night') {
         $("#requirementImage").html("<img id='theImg' src='./images/night.png'   width='15%' height='15%'/>"); 
@@ -234,7 +243,7 @@ function getSounds() {
 }
 
 function setTweet() {
-
+console.log('settweet');
     // current tweet    
     twttr.widgets.createShareButton(
         'https://climatedefiant.azurewebsites.net/',
