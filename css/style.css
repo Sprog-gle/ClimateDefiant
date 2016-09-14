@@ -15,10 +15,8 @@ font-size: 20px;
 h2 {
 color: #333;
 background-color: transparent;
-font-family: 'Bitter';
 opacity: 0.4;
-
-font-family: 'Modak', cursive;
+font-family: 'Baloo Paaji', cursive;
 }
 
 h1#weather-title {
