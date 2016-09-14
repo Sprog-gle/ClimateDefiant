@@ -19,9 +19,9 @@ var songMood;
 
 var randomGreeting, randomGreetingVal;
 
-if (location.protocol === 'http:') {
-    window.location.replace("https://climatedefiant.azurewebsites.net");
-}
+//if (location.protocol === 'http:') {
+ //   window.location.replace("https://climatedefiant.azurewebsites.net");
+//}
 
 randomGreetingGen();
 
